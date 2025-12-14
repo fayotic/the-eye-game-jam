@@ -11,5 +11,13 @@ config_version=5
 [application]
 
 config/name="the-eye-game-jam"
+run/main_scene="uid://rnp8a5irpmxw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioManager="*res://autoloads/audio_manager.gd"
+DataManager="*res://autoloads/data_manager.gd"
+EventBus="*res://autoloads/event_bus.gd"
+SettingsManager="*res://autoloads/settings_manager.gd"
