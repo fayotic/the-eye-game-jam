@@ -10,6 +10,14 @@ sfx_slider = NodePath("Panel/VBoxContainer/VBoxContainer3/SfxVol")
 music_slider = NodePath("Panel/VBoxContainer/VBoxContainer2/MusicVol")
 close_button = NodePath("Panel/VBoxContainer/ReturnButton")
 
+[node name="BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.1254902)
+
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -17,9 +25,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -220.0
-offset_top = -162.0
+offset_top = -216.0
 offset_right = 220.0
-offset_bottom = 162.0
+offset_bottom = 216.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -32,7 +40,7 @@ offset_left = 56.0
 offset_right = -56.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 23
 alignment = 1
 
 [node name="FullscreenCheck" type="CheckBox" parent="Panel/VBoxContainer"]
@@ -70,8 +78,30 @@ text = "SFX Volume"
 [node name="SfxVol" type="HSlider" parent="Panel/VBoxContainer/VBoxContainer3"]
 layout_mode = 2
 
+[node name="VBoxContainer4" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Res" type="Label" parent="Panel/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Window Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/VBoxContainer4"]
+layout_mode = 2
+selected = 2
+item_count = 5
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600 x 900"
+popup/item_1/id = 1
+popup/item_2/text = "1366 x 768"
+popup/item_2/id = 2
+popup/item_3/text = "1280 x 720"
+popup/item_3/id = 3
+popup/item_4/text = "1152 x 648"
+popup/item_4/id = 4
+
 [node name="ReturnButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Save & Exit"
 
-[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="item_selected" from="Panel/VBoxContainer/VBoxContainer4/OptionButton" to="." method="_on_option_button_item_selected"]

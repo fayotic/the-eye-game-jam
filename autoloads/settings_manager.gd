@@ -2,6 +2,8 @@ extends Node
 
 var fullscreen: bool = false
 
+var window_resolution: Vector2i = Vector2i(1152, 648)
+
 var volumes: Dictionary = {
 	"Master": 0.5,
 	"Sfx": 0.5,
@@ -41,14 +43,14 @@ func set_window_mode(state: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 
-	_save()
+	save()
 
 
 ## Sets a bus volume, applies it, and saves
 func set_bus_volume(bus: String, linear_value: float) -> void:
 	volumes[bus] = clamp(linear_value, 0.0, 1.0)
 	_apply_bus_volume(bus, volumes[bus])
-	_save()
+	save()
 
 
 ## Returns the current bus volume
@@ -84,9 +86,11 @@ func get_settings() -> Dictionary:
 	}
 
 
-func _save() -> void:
+func save() -> void:
 	var c = ConfigFile.new()
 	c.set_value(SEC_VIDEO, "fullscreen", fullscreen)
+	c.set_value(SEC_VIDEO, "resolution_x", window_resolution.x)
+	c.set_value(SEC_VIDEO, "resolution_y", window_resolution.y)
 
 	for bus in volumes.keys():
 		c.set_value(SEC_AUDIO, bus, volumes[bus])
@@ -103,6 +107,11 @@ func _load() -> void:
 		return
 
 	fullscreen = bool(c.get_value(SEC_VIDEO, "fullscreen", fullscreen))
+	var x = int(c.get_value(SEC_VIDEO, "resolution_x", window_resolution.x))
+	var y = int(c.get_value(SEC_VIDEO, "resolution_y", window_resolution.y))
+
+	window_resolution = Vector2i(x, y)
+	DisplayServer.window_set_size(window_resolution)
 
 	for bus in ["Master", "Sfx", "Music"]:
 		if c.has_section_key(SEC_AUDIO, bus):
@@ -111,5 +120,5 @@ func _load() -> void:
 
 ## Save and quit the game
 func close_game() -> void:
-	_save()
+	save()
 	get_tree().quit()

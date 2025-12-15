@@ -10,6 +10,14 @@ extends CanvasLayer
 
 var settings_manager: Node
 
+var resolutions = [
+	Vector2i(1920, 1080),
+	Vector2i(1600, 900),
+	Vector2i(1366, 768),
+	Vector2i(1280, 720),
+	Vector2i(1152, 648)
+]
+
 func _ready() -> void:
 	settings_manager = get_tree().get_first_node_in_group("SManager")
 	if settings_manager == null:
@@ -35,7 +43,7 @@ func _connect_signals() -> void:
 		music_slider.value_changed.connect(_on_music_slider_changed)
 
 	if close_button:
-		close_button.pressed.connect(func(): SettingsManager._save() ; call_deferred("queue_free"))
+		close_button.pressed.connect(func(): SettingsManager.save() ; EventBus.menu_closed.emit() ; call_deferred("queue_free"))
 
 
 func _load_toggle(toggle: CheckBox, key: String) -> void:
@@ -72,7 +80,10 @@ func _on_music_slider_changed(value: float) -> void:
 		settings_manager.set_bus_volume("Music", new_value)
 
 
-func _on_tree_exiting() -> void:
-	EventBus.menu_closed.emit()
-	await EventBus.menu_closed
-	queue_free()
+func _on_option_button_item_selected(index: int) -> void:
+	if index >= 0 and index < resolutions.size():
+		var res = resolutions[index]
+		DisplayServer.window_set_size(res)
+		if settings_manager:
+			settings_manager.window_resolution = res
+			settings_manager.save()
