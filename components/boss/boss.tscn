@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cstg4muhu16im"]
+
+[ext_resource type="Script" uid="uid://bkfgrfapa4ta2" path="res://components/boss/boss.gd" id="1_51ogb"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_0qc7v"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m206j"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.014651676, 0.47069666, 0.47069666, 0.073521286, 0.35295743, 0.47060993, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.014651676, 0.47069666, -0.47069666, 0.5, -0.5, 0.5, -0.014651676, 0.47069666, 0.47069666, 0.014651676, 0.47069666, -0.47069666)
+
+[node name="Boss" type="Node3D"]
+script = ExtResource("1_51ogb")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("PrismMesh_0qc7v")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("ConvexPolygonShape3D_m206j")
