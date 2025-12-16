@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://c0g51yhr70a8v" path="res://components/map looper/map_looper.gd" id="1_ksop3"]
 [ext_resource type="PackedScene" uid="uid://c4s8vbkjxxqpw" path="res://components/map looper/rooms/room_a.tscn" id="2_kqsup"]
 
-[node name="MapLooper" type="Node3D"]
+[node name="MapLooper" type="Node3D" node_paths=PackedStringArray("initial_room")]
 script = ExtResource("1_ksop3")
+initial_room = NodePath("RoomA")
 
 [node name="RoomA" parent="." instance=ExtResource("2_kqsup")]
