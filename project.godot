@@ -56,7 +56,20 @@ game_pause={
 ]
 }
 
+[layer_names]
+
+3d_render/quality/msaa_3d=2
+
 [physics]
 
 3d/default_gravity=18.452
+<<<<<<< Updated upstream
 common/physics_interpolation=true
+=======
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+anti_aliasing/quality/msaa_3d=2
+textures/decals/filter=4
+>>>>>>> Stashed changes
