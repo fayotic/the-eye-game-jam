@@ -58,4 +58,5 @@ game_pause={
 
 [physics]
 
-3d/default_gravity=18.451999999999998
+3d/default_gravity=18.452
+common/physics_interpolation=true

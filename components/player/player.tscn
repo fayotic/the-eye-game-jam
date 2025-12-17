@@ -22,3 +22,4 @@ shape = SubResource("ConvexPolygonShape3D_cifxd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4064568, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
