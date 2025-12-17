@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dljxr24nlvcs4" path="res://components/menus/settings/settings_panel.gd" id="1_82oek"]
 
 [node name="SettingsPanel" type="CanvasLayer" node_paths=PackedStringArray("window_mode", "master_slider", "sfx_slider", "music_slider", "close_button")]
+process_mode = 3
 script = ExtResource("1_82oek")
 window_mode = NodePath("Panel/VBoxContainer/FullscreenCheck")
 master_slider = NodePath("Panel/VBoxContainer/VBoxContainer/MasterVol")

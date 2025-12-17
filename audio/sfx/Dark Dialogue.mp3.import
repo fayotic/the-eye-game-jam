@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://x3wdc46xrbw7"
+path="res://.godot/imported/Dark Dialogue.mp3-f7aed29b4ad63e1275f8016a855b49f0.mp3str"
+
+[deps]
+
+source_file="res://audio/sfx/Dark Dialogue.mp3"
+dest_files=["res://.godot/imported/Dark Dialogue.mp3-f7aed29b4ad63e1275f8016a855b49f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cuk5v8405xx6k"]
+[gd_scene load_steps=14 format=3 uid="uid://cuk5v8405xx6k"]
 
 [ext_resource type="Script" uid="uid://dbs426uja00ey" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://diap4brek72eb" path="res://components/map looper/map_looper.tscn" id="1_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://dd6fdpja708v3" path="res://components/dialogue/dialogue_system.tscn" id="4_k0juu"]
 
 [sub_resource type="Gradient" id="Gradient_e5uuo"]
 colors = PackedColorArray(1, 1, 1, 1, 0.47788018, 0.47788012, 0.47788012, 1)
@@ -33,7 +32,7 @@ in_3d_space = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
 sky_cover = SubResource("NoiseTexture2D_4wyf3")
-ground_curve = 0.01681798
+ground_curve = 0.02219143
 
 [sub_resource type="Sky" id="Sky_71j4m"]
 sky_material = SubResource("ProceduralSkyMaterial_k0juu")
@@ -42,9 +41,8 @@ sky_material = SubResource("ProceduralSkyMaterial_k0juu")
 background_mode = 2
 sky = SubResource("Sky_71j4m")
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("dialogue_system")]
+[node name="World" type="Node3D"]
 script = ExtResource("1_4wyf3")
-dialogue_system = NodePath("DialogueSystem")
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -56,30 +54,34 @@ material = SubResource("StandardMaterial3D_4wyf3")
 [node name="MapLooper" parent="Map" node_paths=PackedStringArray("remove_additional_nodes") instance=ExtResource("1_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49994373, -5.998814)
 max_rooms_at_once = 4
-remove_additional_nodes = [NodePath("../CSGBox3D"), NodePath("../Temp/CSGBox3D2"), NodePath("../Temp/CSGBox3D3"), NodePath("../Temp/CSGBox3D4"), NodePath("../Temp/CSGBox3D5"), NodePath("../Temp/CSGBox3D6")]
+remove_additional_nodes = [NodePath("../CSGBox3D"), NodePath("../CSGBox3D2"), NodePath("../CSGBox3D3"), NodePath("../CSGBox3D4"), NodePath("../CSGBox3D5"), NodePath("../CSGBox3D6")]
 
-[node name="Temp" type="Node3D" parent="Map"]
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Map/Temp"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map"]
 use_collision = true
 size = Vector3(27.307617, 1, 21.414307)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Map/Temp"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26.426163)
+visible = false
+use_collision = true
+size = Vector3(93.619385, 1, 74.34799)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map"]
 transform = Transform3D(0.5649094, 0, 0.82515293, 0, 1, 0, -0.82515293, 0, 0.5649094, 25.148142, 0, -13.817961)
 use_collision = true
 size = Vector3(53.115723, 1, 16.581055)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Map/Temp"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Map"]
 transform = Transform3D(0.07664943, 0, 0.99705803, 0, 1, 0, -0.99705803, 0, 0.07664943, 32.646736, -1.9073486e-06, -42.169075)
 use_collision = true
 size = Vector3(39.009644, 1, 21.414307)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Map/Temp"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-0.5649094, -8.742278e-08, -0.82515293, 4.938595e-08, -1, 7.213716e-08, -0.82515293, 0, 0.5649094, -25.353264, -2.2351226e-06, -13.817961)
 use_collision = true
 size = Vector3(53.115723, 1, 16.581055)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Map/Temp"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-0.076649435, -8.7422784e-08, -0.99705815, 6.7009056e-09, -1, 8.716558e-08, -0.99705815, 0, 0.076649435, -32.85186, 3.2777405e-07, -42.169075)
 use_collision = true
 size = Vector3(39.009644, 1, 21.414307)
@@ -90,8 +92,7 @@ size = Vector3(39.009644, 1, 21.414307)
 environment = SubResource("Environment_qfnet")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviroment"]
-transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, -0.36397013, 0.20313492, -0.90898955, 0.34282035, -0.87820053, -0.33352372, 0, 0, 0)
-light_volumetric_fog_energy = 0.0
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Entities" type="Node3D" parent="."]
@@ -100,10 +101,3 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5987501, 0.8857908, 0.15621805)
 
 [node name="Misc" type="Node3D" parent="."]
-
-[node name="DialogueSystem" parent="." instance=ExtResource("4_k0juu")]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2

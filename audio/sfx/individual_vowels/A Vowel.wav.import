@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bp042lv5k35p2"
+path="res://.godot/imported/A Vowel.wav-f719f6ceeff1e36ff2e276d95a3bf7bd.sample"
+
+[deps]
+
+source_file="res://audio/sfx/individual_vowels/A Vowel.wav"
+dest_files=["res://.godot/imported/A Vowel.wav-f719f6ceeff1e36ff2e276d95a3bf7bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

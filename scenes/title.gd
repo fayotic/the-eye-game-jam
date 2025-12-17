@@ -5,7 +5,10 @@ extends Control
 @export var quit_button: BaseButton
 
 func _ready() -> void:
-	
+
+	SettingsManager.in_game = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 	if play_button:
 		play_button.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/world.tscn"))
 	else:
