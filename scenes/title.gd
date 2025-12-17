@@ -27,7 +27,7 @@ func _ready() -> void:
 
 #When the Play Button is pressed, it goes to Level_0 scene (where the game starts)
 func _on_button_pressed():
-	TransitionAnimation.change_scene("res://scenes/level_0.tscn")
+	get_tree().change_scene_to_file("res://components/cutscenes/maryam_waking.tscn")
 	
 	
 func _call_settings() -> void:
