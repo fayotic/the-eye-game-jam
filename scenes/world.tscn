@@ -23,7 +23,7 @@ colors = PackedColorArray(0, 0, 0.6313726, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_rwgxs"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k0juu"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4wyf3"]
 width = 1024
 height = 1024
 noise = SubResource("FastNoiseLite_rwgxs")
@@ -32,7 +32,7 @@ seamless = true
 in_3d_space = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
-sky_cover = SubResource("NoiseTexture2D_k0juu")
+sky_cover = SubResource("NoiseTexture2D_4wyf3")
 ground_curve = 0.01681798
 
 [sub_resource type="Sky" id="Sky_71j4m"]
