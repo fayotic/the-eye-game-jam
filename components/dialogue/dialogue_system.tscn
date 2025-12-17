@@ -4,6 +4,33 @@
 [ext_resource type="AudioStream" uid="uid://bp042lv5k35p2" path="res://audio/sfx/individual_vowels/A Vowel.wav" id="2_1337u"]
 [ext_resource type="PackedScene" uid="uid://ckpx704sflb2" path="res://components/dialogue/displayer_component.tscn" id="2_hjkqw"]
 
+[sub_resource type="Animation" id="Animation_ripnd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/DialogueLbl:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/DialogueLbl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(328.5, 581)]
+}
+
 [sub_resource type="Animation" id="Animation_1337u"]
 resource_name = "appear"
 length = 0.1
@@ -30,33 +57,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(328.5, 620), Vector2(328.5, 581)]
-}
-
-[sub_resource type="Animation" id="Animation_ripnd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/DialogueLbl:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/DialogueLbl:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(328.5, 581)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2888r"]

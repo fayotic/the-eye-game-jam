@@ -21,7 +21,6 @@ AudioManager="*res://autoloads/audio_manager.gd"
 DataManager="*res://autoloads/data_manager.gd"
 EventBus="*res://autoloads/event_bus.gd"
 SettingsManager="*res://autoloads/settings_manager.gd"
-TransitionAnimation="*res://components/transitions/transition_animation.tscn"
 
 [input]
 
