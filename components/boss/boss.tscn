@@ -7,14 +7,14 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m206j"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.014651676, 0.47069666, 0.47069666, 0.073521286, 0.35295743, 0.47060993, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.014651676, 0.47069666, -0.47069666, 0.5, -0.5, 0.5, -0.014651676, 0.47069666, 0.47069666, 0.014651676, 0.47069666, -0.47069666)
 
-[node name="Boss" type="Node3D"]
+[node name="Boss" type="CharacterBody3D"]
 script = ExtResource("1_51ogb")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-collision_mask = 3
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PrismMesh_0qc7v")
+skeleton = NodePath("")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_m206j")

@@ -11,9 +11,10 @@ const SENSITIVITY = 0.001
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	add_to_group("Player")
 
 	
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
