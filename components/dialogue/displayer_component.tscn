@@ -14,7 +14,7 @@ offset_right = 247.5
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 16
 text = "[Temporary Dialogue Text]"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -30,25 +30,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DialogueTitle" type="Label" parent="DialogueLbl/DialoguePanel"]
+[node name="DialoguePanel2" type="Panel" parent="DialogueLbl/DialoguePanel" groups=["diag_panel"]]
+z_index = -1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 167.5
-offset_top = -51.0
-offset_right = -167.5
-offset_bottom = -6.0
+offset_left = 181.5
+offset_top = -35.0
+offset_right = -181.5
+offset_bottom = -9.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "[Mother]"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="DialoguePanel2" type="Panel" parent="DialogueLbl/DialoguePanel/DialogueTitle" groups=["diag_panel"]]
-z_index = -1
+[node name="DialogueTitle" type="Label" parent="DialogueLbl/DialoguePanel/DialoguePanel2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "[Mother]"
+horizontal_alignment = 1
+vertical_alignment = 1
