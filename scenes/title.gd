@@ -6,7 +6,10 @@ extends Control
 
 
 func _ready() -> void:
-	
+
+	SettingsManager.in_game = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 	if play_button:
 		play_button.pressed.connect(func(): _on_button_pressed())
 	else:

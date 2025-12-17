@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd6fdpja708v3"]
+
+[ext_resource type="Script" uid="uid://d3l0bjat7wtgn" path="res://components/dialogue/dialogue_system.gd" id="1_baydv"]
+[ext_resource type="AudioStream" uid="uid://bp042lv5k35p2" path="res://audio/sfx/individual_vowels/A Vowel.wav" id="2_1337u"]
+[ext_resource type="PackedScene" uid="uid://ckpx704sflb2" path="res://components/dialogue/displayer_component.tscn" id="2_hjkqw"]
+
+[sub_resource type="Animation" id="Animation_1337u"]
+resource_name = "appear"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/DialogueLbl:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/DialogueLbl:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(328.5, 620), Vector2(328.5, 581)]
+}
+
+[sub_resource type="Animation" id="Animation_ripnd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/DialogueLbl:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/DialogueLbl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(328.5, 581)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2888r"]
+_data = {
+&"RESET": SubResource("Animation_ripnd"),
+&"appear": SubResource("Animation_1337u")
+}
+
+[node name="DialogueSystem" type="Control" node_paths=PackedStringArray("dialogue", "dialogue_title", "diag_panel", "dialogue_player")]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_baydv")
+dialogue = NodePath("CanvasLayer/DialogueLbl")
+dialogue_title = NodePath("CanvasLayer/DialogueLbl/DialoguePanel/DialoguePanel2/DialogueTitle")
+diag_panel = NodePath("CanvasLayer/DialogueLbl/DialoguePanel")
+dialogue_player = NodePath("DialogueAudio")
+
+[node name="DialogueAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1337u")
+pitch_scale = 0.8
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_hjkqw")]
+
+[node name="DialogueAnim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2888r")
+}
+
+[editable path="CanvasLayer"]

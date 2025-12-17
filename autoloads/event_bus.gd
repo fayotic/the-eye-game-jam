@@ -6,3 +6,5 @@ signal scene_changed
 signal menu_closed
 @warning_ignore("unused_signal")
 signal room_created(rotation_deg: float, world_position: Vector3)
+@warning_ignore("unused_signal")
+signal settings_toggled(menu: CanvasLayer, state: bool)

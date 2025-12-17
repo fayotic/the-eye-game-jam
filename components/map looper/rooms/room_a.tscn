@@ -30,6 +30,7 @@ material = SubResource("StandardMaterial3D_wcbn8")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49949998, -14.5)
+visible = false
 use_collision = true
 size = Vector3(3, 1, 1)
 material = SubResource("StandardMaterial3D_wcbn8")
@@ -48,12 +49,14 @@ material = SubResource("StandardMaterial3D_wcbn8")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.141, -21.121)
+visible = false
 use_collision = true
 size = Vector3(3, 1, 4)
 material = SubResource("StandardMaterial3D_wcbn8")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.635251, -29.114405)
+visible = false
 use_collision = true
 size = Vector3(3, 0.71728516, 2.1436768)
 material = SubResource("StandardMaterial3D_wcbn8")
@@ -90,12 +93,14 @@ material = SubResource("StandardMaterial3D_wcbn8")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, -3.1780758, -17.471075)
+visible = false
 use_collision = true
 size = Vector3(3, 1, 7.989258)
 material = SubResource("StandardMaterial3D_wcbn8")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, -8.819, -25.592)
+visible = false
 use_collision = true
 size = Vector3(3, 1, 7.989258)
 material = SubResource("StandardMaterial3D_wcbn8")
@@ -128,6 +133,7 @@ material = SubResource("StandardMaterial3D_wcbn8")
 
 [node name="CenterZone" type="Area3D" parent="Misc"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.1429663, -22.167446)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Misc/CenterZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44921875, 0.30963135)

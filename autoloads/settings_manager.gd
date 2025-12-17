@@ -10,16 +10,22 @@ var volumes: Dictionary = {
 	"Music": 0.5,
 }
 
+var paused: bool = false
+var in_game: bool = false
+
+var active_pause_menu: CanvasLayer
+var active_settings_menu: CanvasLayer
+
 const CFG: String = "user://settings.cfg"
 const SEC_VIDEO: String = "Video"
 const SEC_AUDIO: String = "Audio"
 const SETTINGS = preload("res://components/menus/settings/settings_panel.tscn")
+const GAME_PAUSE = preload("uid://cfp24fywebg1w")
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	add_to_group("SManager")
 	_load()
-
 	set_window_mode(fullscreen)
 
 	for bus_name in volumes.keys():
@@ -28,9 +34,8 @@ func _ready() -> void:
 
 ## Creates and displays the settings overlay on a parent node
 func display_settings_overlay(parent: Node) -> void:
-	if parent:
-		var s = SETTINGS.instantiate()
-		parent.add_child(s)
+	active_settings_menu = SETTINGS.instantiate()
+	parent.add_child(active_settings_menu)
 
 
 ## Sets window mode to either fullscreen or windowed
@@ -101,6 +106,7 @@ func save() -> void:
 
 	print("Game Setting saved!")
 
+
 func _load() -> void:
 	var c = ConfigFile.new()
 	if c.load(CFG) != OK:
@@ -122,3 +128,23 @@ func _load() -> void:
 func close_game() -> void:
 	save()
 	get_tree().quit()
+
+
+func pause_game() -> void:
+	paused = !paused
+	get_tree().paused = paused
+
+	if paused:
+		active_pause_menu = GAME_PAUSE.instantiate()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().root.add_child(active_pause_menu)
+	else:
+		if active_pause_menu:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			active_pause_menu.queue_free()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("game_pause"):
+		if in_game:
+			pause_game()
