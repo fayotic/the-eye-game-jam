@@ -5,13 +5,16 @@ extends Node3D
 @export var initial_room: Node3D
 @export var remove_additional_nodes: Array[Node3D] = []
 
+@export var sequential_order: bool = true
+
 var rooms = [
-	preload("uid://br7c3g0bpoi28"),
-	preload("uid://8bxi6os700kl"),
-	preload("uid://dhmte4obd35yt")
+	preload("uid://br7c3g0bpoi28"), #Room 1
+	preload("uid://8bxi6os700kl"), #Room 2
+	preload("uid://dhmte4obd35yt") #Room 3
 ]
 
 var created_rooms: Array[Node3D] = []
+var sequence_order: int = 0
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -24,7 +27,11 @@ func _ready() -> void:
 #Creates a room with a given rotation and position, value recieved from EventBus.room_created
 #And Eventbus.room created is called from the room script itself
 func create_room(rot: float, pos: Vector3) -> void:
-	var room = rooms.pick_random().instantiate()
+	var room
+	if !sequential_order:
+		room = rooms.pick_random().instantiate()
+	else:
+		room = rooms[sequence_order].instantiate()
 	created_rooms.append(room)
 	add_child(room)
 	room.global_rotation_degrees.y = rot
@@ -35,6 +42,9 @@ func create_room(rot: float, pos: Vector3) -> void:
 	while remove_additional_nodes.size() > 0: #If there's anything we want to remove extra, remove.
 		remove_additional_nodes[0].queue_free()
 		remove_additional_nodes.remove_at(0)
+
+	if sequential_order:
+		sequence_order += 1
 
 #Adds a node to the list of nodes to be removed upon removal of a room
 func add_exit_removals(object: Node) -> void:

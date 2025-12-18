@@ -56,33 +56,7 @@ material = SubResource("StandardMaterial3D_4wyf3")
 [node name="MapLooper" parent="Map" node_paths=PackedStringArray("remove_additional_nodes") instance=ExtResource("1_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49994373, -5.998814)
 max_rooms_at_once = 4
-remove_additional_nodes = [NodePath("../CSGBox3D"), NodePath("../Temp/CSGBox3D2"), NodePath("../Temp/CSGBox3D3"), NodePath("../Temp/CSGBox3D4"), NodePath("../Temp/CSGBox3D5"), NodePath("../Temp/CSGBox3D6")]
-
-[node name="Temp" type="Node3D" parent="Map"]
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Map/Temp"]
-use_collision = true
-size = Vector3(27.307617, 1, 21.414307)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Map/Temp"]
-transform = Transform3D(0.5649094, 0, 0.82515293, 0, 1, 0, -0.82515293, 0, 0.5649094, 25.148142, 0, -13.817961)
-use_collision = true
-size = Vector3(53.115723, 1, 16.581055)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Map/Temp"]
-transform = Transform3D(0.07664943, 0, 0.99705803, 0, 1, 0, -0.99705803, 0, 0.07664943, 32.646736, -1.9073486e-06, -42.169075)
-use_collision = true
-size = Vector3(39.009644, 1, 21.414307)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Map/Temp"]
-transform = Transform3D(-0.5649094, -8.742278e-08, -0.82515293, 4.938595e-08, -1, 7.213716e-08, -0.82515293, 0, 0.5649094, -25.353264, -2.2351226e-06, -13.817961)
-use_collision = true
-size = Vector3(53.115723, 1, 16.581055)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Map/Temp"]
-transform = Transform3D(-0.076649435, -8.7422784e-08, -0.99705815, 6.7009056e-09, -1, 8.716558e-08, -0.99705815, 0, 0.076649435, -32.85186, 3.2777405e-07, -42.169075)
-use_collision = true
-size = Vector3(39.009644, 1, 21.414307)
+remove_additional_nodes = [NodePath("../CSGBox3D"), null, null, null, null, null]
 
 [node name="Enviroment" type="Node3D" parent="."]
 

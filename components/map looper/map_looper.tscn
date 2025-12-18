@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://diap4brek72eb"]
+[gd_scene load_steps=3 format=3 uid="uid://diap4brek72eb"]
 
 [ext_resource type="Script" uid="uid://c0g51yhr70a8v" path="res://components/map looper/map_looper.gd" id="1_ksop3"]
+[ext_resource type="PackedScene" uid="uid://cweyyqqk8go0i" path="res://components/map looper/rooms/stage_0.tscn" id="2_kqsup"]
 
 [node name="MapLooper" type="Node3D"]
 script = ExtResource("1_ksop3")
+
+[node name="Stage_0" parent="." instance=ExtResource("2_kqsup")]
