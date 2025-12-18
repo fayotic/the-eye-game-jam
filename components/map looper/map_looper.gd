@@ -6,7 +6,7 @@ extends Node3D
 @export var remove_additional_nodes: Array[Node3D] = []
 
 var rooms = [
-	preload("uid://c4s8vbkjxxqpw"),
+	preload("uid://br7c3g0bpoi28"),
 	preload("uid://8bxi6os700kl"),
 	preload("uid://dhmte4obd35yt")
 ]
