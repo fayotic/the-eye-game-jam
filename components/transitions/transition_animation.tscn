@@ -1,37 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceq51lfn5telu"]
+[gd_scene load_steps=4 format=3 uid="uid://ceq51lfn5telu"]
 
 [ext_resource type="Script" uid="uid://cedsgexlcj2wa" path="res://components/transitions/transition_animation.gd" id="1_vq517"]
-
-[sub_resource type="Animation" id="Animation_vq517"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_8vabw"]
-resource_name = "fade_in"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4),
-"transitions": PackedFloat32Array(0.68302023, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_kcu51"]
 resource_name = "fade_out"
@@ -51,8 +20,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yyb47"]
 _data = {
-&"RESET": SubResource("Animation_vq517"),
-&"fade_in": SubResource("Animation_8vabw"),
 &"fade_out": SubResource("Animation_kcu51")
 }
 
@@ -62,7 +29,10 @@ script = ExtResource("1_vq517")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 modulate = Color(0, 0, 0, 1)
+light_mask = 2
+visibility_layer = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

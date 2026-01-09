@@ -1,9 +1,27 @@
-[gd_scene load_steps=15 format=3 uid="uid://cuk5v8405xx6k"]
+[gd_scene load_steps=38 format=3 uid="uid://cuk5v8405xx6k"]
 
 [ext_resource type="Script" uid="uid://dbs426uja00ey" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://diap4brek72eb" path="res://components/map looper/map_looper.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dd6fdpja708v3" path="res://components/dialogue/dialogue_system.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://c1sytu1taj6qp" path="res://components/cutscenes/maryam_waking.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://ceq51lfn5telu" path="res://components/transitions/transition_animation.tscn" id="6_qfnet"]
+[ext_resource type="ArrayMesh" uid="uid://b4cmx4d5wu18q" path="res://meshes/PS1_ArabianStyle/Hokkah/LowPoly_Hokkah.obj" id="7_i7141"]
+[ext_resource type="Script" uid="uid://b0bc1kviq3ggd" path="res://scenes/level1-triggers/hookah.gd" id="8_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://c4crlvg4c53dk" path="res://meshes/PS1_ArabianStyle/Hokkah/texture/LowPoly_Hokkah_HokkahBase_BaseColor.png" id="8_q5onr"]
+[ext_resource type="Texture2D" uid="uid://be8p0esu56gyh" path="res://meshes/PS1_ArabianStyle/Hokkah/texture/LowPoly_Hokkah_HokkahBase_Emissive.png" id="9_jhx03"]
+[ext_resource type="Texture2D" uid="uid://nyl0ex46a7lv" path="res://meshes/PS1_ArabianStyle/Hokkah/texture/LowPoly_Hokkah_HokkahBase_Metallic.png" id="10_o8fc1"]
+[ext_resource type="Texture2D" uid="uid://bjj6gc0jo334a" path="res://meshes/PS1_ArabianStyle/Hokkah/texture/LowPoly_Hokkah_HokkahBase_Roughness.png" id="11_xo05s"]
+[ext_resource type="ArrayMesh" uid="uid://dnwqocwtmpq7p" path="res://meshes/PS1_ArabianStyle/Blazer/LowPoly_Blazer.obj" id="12_lakw3"]
+[ext_resource type="Texture2D" uid="uid://bvbpvgores3ch" path="res://meshes/PS1_ArabianStyle/Blazer/texture/LowPoly_Blazer_Base_Normal.png" id="13_pm21f"]
+[ext_resource type="Texture2D" uid="uid://d1y0p08gko8ut" path="res://meshes/PS1_ArabianStyle/Blazer/texture/LowPoly_Blazer_Base_Emissive.png" id="14_2lf6f"]
+[ext_resource type="Texture2D" uid="uid://dab20gi42jv6e" path="res://meshes/PS1_ArabianStyle/Blazer/texture/LowPoly_Blazer_Base_Metallic.png" id="15_7iits"]
+[ext_resource type="Texture2D" uid="uid://gracd30mh4jo" path="res://meshes/PS1_ArabianStyle/Blazer/texture/LowPoly_Blazer_Base_Roughness.png" id="16_oo54l"]
+[ext_resource type="ArrayMesh" uid="uid://4ic10pnh2jnf" path="res://meshes/PS1_ArabianStyle/SofaBed/LowPoly_SofaBed.obj" id="17_oo54l"]
+[ext_resource type="Texture2D" uid="uid://dtcci08dhkf1i" path="res://meshes/PS1_ArabianStyle/SofaBed/texture/LowPoly_SofaBed_Pillow_Emissive.png" id="18_ctatt"]
+[ext_resource type="Script" uid="uid://dasu4geaqsw4t" path="res://scenes/level1-triggers/blazer.gd" id="18_kpybi"]
+[ext_resource type="Texture2D" uid="uid://c60cswujpnull" path="res://meshes/PS1_ArabianStyle/SofaBed/texture/LowPoly_SofaBed_Pillow_Metallic.png" id="19_xgqkh"]
+[ext_resource type="Texture2D" uid="uid://d4d3vk47jjevd" path="res://meshes/PS1_ArabianStyle/SofaBed/texture/LowPoly_SofaBed_Pillow_Roughness.png" id="20_munwf"]
 
 [sub_resource type="Gradient" id="Gradient_e5uuo"]
 colors = PackedColorArray(1, 1, 1, 1, 0.47788018, 0.47788012, 0.47788012, 1)
@@ -42,6 +60,33 @@ sky_material = SubResource("ProceduralSkyMaterial_k0juu")
 background_mode = 2
 sky = SubResource("Sky_71j4m")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dss4m"]
+albedo_texture = ExtResource("8_q5onr")
+metallic = 1.0
+metallic_texture = ExtResource("10_o8fc1")
+roughness_texture = ExtResource("11_xo05s")
+emission_enabled = true
+emission_texture = ExtResource("9_jhx03")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctatt"]
+albedo_texture = ExtResource("13_pm21f")
+metallic = 1.0
+metallic_texture = ExtResource("15_7iits")
+roughness_texture = ExtResource("16_oo54l")
+emission_enabled = true
+emission_texture = ExtResource("14_2lf6f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts3gi"]
+metallic = 1.0
+metallic_texture = ExtResource("19_xgqkh")
+roughness_texture = ExtResource("20_munwf")
+emission_enabled = true
+emission_texture = ExtResource("18_ctatt")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7r4gi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgqkh"]
+
 [node name="World" type="Node3D" node_paths=PackedStringArray("dialogue_system")]
 script = ExtResource("1_4wyf3")
 dialogue_system = NodePath("DialogueSystem")
@@ -54,7 +99,7 @@ size = Vector3(12, 1, 12)
 material = SubResource("StandardMaterial3D_4wyf3")
 
 [node name="MapLooper" parent="Map" node_paths=PackedStringArray("remove_additional_nodes") instance=ExtResource("1_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49994373, -5.998814)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00039958954, 0.48244667, -6.0020003)
 max_rooms_at_once = 4
 remove_additional_nodes = [NodePath("../CSGBox3D"), null, null, null, null, null]
 
@@ -71,7 +116,7 @@ shadow_enabled = true
 [node name="Entities" type="Node3D" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("1_nnsk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5987501, 0.8857908, 0.15621805)
+transform = Transform3D(0.8485287, 0, 0.5291494, 0, 1, 0, -0.5291494, 0, 0.8485287, 0.5987501, 0.8857908, -1.1658369)
 
 [node name="Misc" type="Node3D" parent="."]
 
@@ -81,3 +126,66 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Maryam_Waking" parent="." instance=ExtResource("5_71j4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0477666, 1.59119, -0.1858257)
+
+[node name="Transitions" type="Node2D" parent="."]
+
+[node name="TransitionAnimation" parent="Transitions" instance=ExtResource("6_qfnet")]
+
+[node name="Assets" type="Node3D" parent="."]
+
+[node name="LowPolyHokkah" type="MeshInstance3D" parent="Assets"]
+unique_name_in_owner = true
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.2995755, -0.6543485, -7.7274675)
+mesh = ExtResource("7_i7141")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dss4m")
+
+[node name="LowPolyBlazer" type="MeshInstance3D" parent="Assets"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 1.0157664, 0.8120043, -18.220945)
+mesh = ExtResource("12_lakw3")
+skeleton = NodePath("../../Map")
+surface_material_override/0 = SubResource("StandardMaterial3D_ctatt")
+
+[node name="LowPolySofaBed" type="MeshInstance3D" parent="Assets"]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0.5458703, 0.60449076, 0.01508677)
+mesh = ExtResource("17_oo54l")
+surface_material_override/0 = SubResource("StandardMaterial3D_ts3gi")
+
+[node name="Triggers" type="Node3D" parent="."]
+
+[node name="Hookah" type="Area3D" parent="Triggers" node_paths=PackedStringArray("blazer_node")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+script = ExtResource("8_4mrxx")
+blazer_node = NodePath("../Blazer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/Hookah"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.349671, -1.2301391, -41.166862)
+shape = SubResource("WorldBoundaryShape3D_7r4gi")
+
+[node name="DialogueSystem2" parent="Triggers/Hookah" instance=ExtResource("4_k0juu")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blazer" type="Area3D" parent="Triggers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9715096, 1.3182671, -18.14489)
+script = ExtResource("18_kpybi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/Blazer"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_xgqkh")
+
+[node name="DialogueSystem" parent="Triggers/Blazer" instance=ExtResource("4_k0juu")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="body_entered" from="Triggers/Hookah" to="Triggers/Hookah" method="_on_body_entered"]
+[connection signal="body_entered" from="Triggers/Blazer" to="Triggers/Blazer" method="_on_body_entered"]

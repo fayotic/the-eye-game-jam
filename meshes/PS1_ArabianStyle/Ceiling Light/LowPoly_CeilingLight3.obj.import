@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crbtup8nsbaow"
+path="res://.godot/imported/LowPoly_CeilingLight3.obj-c10b3f7cbff8f2b2209e305a9a40380d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/LowPoly_CeilingLight3.obj-c10b3f7cbff8f2b2209e305a9a40380d.mesh"]
+
+source_file="res://meshes/PS1_ArabianStyle/Ceiling Light/LowPoly_CeilingLight3.obj"
+dest_files=["res://.godot/imported/LowPoly_CeilingLight3.obj-c10b3f7cbff8f2b2209e305a9a40380d.mesh", "res://.godot/imported/LowPoly_CeilingLight3.obj-c10b3f7cbff8f2b2209e305a9a40380d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
