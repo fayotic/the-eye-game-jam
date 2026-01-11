@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://5rqbxtnr54xt"]
 
 [ext_resource type="Script" uid="uid://noqrinxktevj" path="res://components/player/player.gd" id="1_t3162"]
-[ext_resource type="Shader" path="res://ps1_esque.gdshader" id="2_kfe3d"]
+[ext_resource type="Shader" uid="uid://kj3q4v4d6j70" path="res://ps1_esque.gdshader" id="2_kfe3d"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p7vaq"]
 
@@ -21,6 +21,7 @@ script = ExtResource("1_t3162")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8438604, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_p7vaq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

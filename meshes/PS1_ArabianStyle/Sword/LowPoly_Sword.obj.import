@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8216if8qg4gs"
+path="res://.godot/imported/LowPoly_Sword.obj-185b8bc0c29ca2b8446fbf5047d8f989.mesh"
+
+[deps]
+
+files=["res://.godot/imported/LowPoly_Sword.obj-185b8bc0c29ca2b8446fbf5047d8f989.mesh"]
+
+source_file="res://meshes/PS1_ArabianStyle/Sword/LowPoly_Sword.obj"
+dest_files=["res://.godot/imported/LowPoly_Sword.obj-185b8bc0c29ca2b8446fbf5047d8f989.mesh", "res://.godot/imported/LowPoly_Sword.obj-185b8bc0c29ca2b8446fbf5047d8f989.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

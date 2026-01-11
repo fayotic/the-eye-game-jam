@@ -3,6 +3,7 @@ extends Control
 @export var play_button: BaseButton
 @export var settings_button: BaseButton
 @export var quit_button: BaseButton
+@onready var transition = $TransitionAnimation
 
 
 func _ready() -> void:
@@ -27,7 +28,7 @@ func _ready() -> void:
 
 #When the Play Button is pressed, it goes to Level_0 scene (where the game starts)
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://components/cutscenes/maryam_waking.tscn")
+	get_tree().change_scene_to_file("res://scenes/world.tscn")
 	
 	
 func _call_settings() -> void:

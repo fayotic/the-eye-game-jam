@@ -16,34 +16,6 @@ sky = SubResource("Sky_eokr6")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="Animation" id="Animation_hlsfw"]
-resource_name = "maryam_waking"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.26666668, 0.43333334, 0.7, 0.79999995, 0.9, 1, 1.1, 1.3333334, 1.4666667, 1.6, 1.7666667, 1.9666667, 2.3, 2.6666667, 2.8, 2.9333334, 3.1333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1.5707964, 1.5707964, 0), Vector3(1.4835298, 1.5707964, 0), Vector3(1.3962634, 1.5707964, 0), Vector3(1.3788102, 1.5707964, 0.08726646), Vector3(1.3089969, 1.5707964, 0), Vector3(1.2217305, 1.5707964, 0), Vector3(1.134464, 1.4835298, 0), Vector3(1.0471976, 1.3962634, 0), Vector3(0.9599311, 1.3089969, 0), Vector3(0.87266463, 1.2217305, 0), Vector3(0.6981317, 1.0471976, 0), Vector3(0.5235988, 0.87266463, 0), Vector3(0.34906584, 0.6981317, 0), Vector3(0.17453292, 0.5235988, 0), Vector3(0, 0.34906584, 0), Vector3(0, 0.2617994, 0), Vector3(0, 0.17453292, 0), Vector3(0, 0.08726646, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.8666667, 1.01, 1.11),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.068, 0.2, 0.665), Vector3(0.068, 0.4, 0.5), Vector3(0.068, 0.5, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_1juvt"]
 length = 0.001
 tracks/0/type = "value"
@@ -71,6 +43,34 @@ tracks/1/keys = {
 "values": [Vector3(0.068, 0.1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_hlsfw"]
+resource_name = "maryam_waking"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.26666668, 0.43333334, 0.7, 0.79999995, 0.9, 1, 1.1, 1.3333334, 1.4666667, 1.6, 1.7666667, 1.9666667, 2.3, 2.6666667, 2.8, 2.9333334, 3.1333334, 3.9, 4, 4.1000004, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7000003, 4.8, 4.9, 5, 6.0666666, 6.166667, 6.2666664, 6.366667, 6.466666, 6.5666666, 6.6666665, 6.7666664, 6.8666663, 6.966666, 7.0666666, 7.1666665, 7.2666664, 7.3666663, 7.4666667, 7.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 1.5707964, 0), Vector3(1.4835298, 1.5707964, 0), Vector3(1.3962634, 1.5707964, 0), Vector3(1.3788102, 1.5707964, 0.08726646), Vector3(1.3089969, 1.5707964, 0), Vector3(1.2217305, 1.5707964, 0), Vector3(1.134464, 1.4835298, 0), Vector3(1.0471976, 1.3962634, 0), Vector3(0.9599311, 1.3089969, 0), Vector3(0.87266463, 1.2217305, 0), Vector3(0.6981317, 1.0471976, 0), Vector3(0.5235988, 0.87266463, 0), Vector3(0.34906584, 0.6981317, 0), Vector3(0.17453292, 0.5235988, 0), Vector3(0, 0.34906584, 0), Vector3(0, 0.2617994, 0), Vector3(0, 0.17453292, 0), Vector3(0, 0.08726646, 0), Vector3(0, 0, 0), Vector3(0, -0.034906626, 0), Vector3(0, -0.06981317, 0), Vector3(0, -0.10471976, 0), Vector3(0, -0.15707964, 0), Vector3(0, -0.20943952, 0), Vector3(0, -0.2617994, 0), Vector3(0, -0.33161256, 0), Vector3(0, -0.40142572, 0), Vector3(0, -0.4886922, 0), Vector3(0, -0.57595867, 0), Vector3(0, -0.6632251, 0), Vector3(0, -0.7853982, 0), Vector3(0, -0.6632251, 0), Vector3(0, -0.57595867, 0), Vector3(0, -0.4886922, 0), Vector3(0, -0.40142572, 0), Vector3(0, -0.31415927, 0), Vector3(0, -0.2268928, 0), Vector3(0, -0.13962634, 0), Vector3(0, -0.10471976, 0), Vector3(0, -0.017453292, 0), Vector3(0, 0.06981317, 0), Vector3(0, 0.13962634, 0), Vector3(0, 0.20943952, 0), Vector3(0, 0.27925268, 0), Vector3(0, 0.34906584, 0), Vector3(0, 0.41887903, 0), Vector3(0, 0.4886922, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8666667, 1.01, 1.11),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.068, 0.2, 0.665), Vector3(0.068, 0.4, 0.5), Vector3(0.068, 0.5, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l0wg6"]
 _data = {
 &"RESET": SubResource("Animation_1juvt"),
@@ -89,6 +89,7 @@ shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2215881, -0.41625977, -4.3085403)
+visible = false
 size = Vector3(8.854065, 0.16748047, 12.827469)
 
 [node name="Camera3D" type="Camera3D" parent="."]
