@@ -27,6 +27,7 @@ mesh = SubResource("CapsuleMesh_p7vaq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8438604, 0)
 shape = SubResource("ConvexPolygonShape3D_cifxd")
+disabled = true
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4064568, 0)
