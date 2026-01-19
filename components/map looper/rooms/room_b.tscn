@@ -28,106 +28,10 @@ use_collision = true
 size = Vector3(3, 1, 3)
 material = SubResource("StandardMaterial3D_rt8o8")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49949998, -14.5)
-use_collision = true
-size = Vector3(3, 1, 1)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.49949998, -14.5)
-use_collision = true
-size = Vector3(3, 1, 1)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.49949998, -14.5)
-use_collision = true
-size = Vector3(3, 1, 1)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.141, -21.121)
-use_collision = true
-size = Vector3(3, 1, 4)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.635251, -29.114405)
-use_collision = true
-size = Vector3(3, 0.71728516, 2.1436768)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D16" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.494424, -11.635251, -21.624804)
-use_collision = true
-size = Vector3(3, 0.71728516, 2.1436768)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D17" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.520182, -11.635251, -21.624804)
-use_collision = true
-size = Vector3(3, 0.71728516, 2.1436768)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -6.141, -21.121)
-use_collision = true
-size = Vector3(3, 1, 4)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -6.141, -21.121)
-use_collision = true
-size = Vector3(3, 1, 4)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 5, -3.1780758, -17.471075)
-use_collision = true
-size = Vector3(3, 1, 7.989258)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, -3.1780758, -17.471075)
-use_collision = true
-size = Vector3(3, 1, 7.989258)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, -8.819, -25.592)
-use_collision = true
-size = Vector3(3, 1, 7.989258)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -5, -3.1780758, -17.471075)
-use_collision = true
-size = Vector3(3, 1, 7.989258)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(-4.371139e-08, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 1, 3.090862e-08, -3.090862e-08, 8.972, -8.819, -21.621)
-use_collision = true
-size = Vector3(3, 1, 7.989258)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(2.9802322e-08, -0.7071067, 0.7071067, 0, 0.7071067, 0.7071067, -1, 0, 0, -8.972, -8.819, -21.621)
-use_collision = true
-size = Vector3(3, 1, 7.989258)
-material = SubResource("StandardMaterial3D_rt8o8")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49949998, -8.5)
-use_collision = true
-size = Vector3(13, 1, 11)
-material = SubResource("StandardMaterial3D_rt8o8")
-
 [node name="Misc" type="Node3D" parent="."]
 
 [node name="CenterZone" type="Area3D" parent="Misc"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.1429663, -22.167446)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.1429663, -97.16745)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Misc/CenterZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44921875, 0.30963135)
@@ -135,7 +39,7 @@ shape = SubResource("BoxShape3D_rt8o8")
 debug_color = Color(0.9291779, 0, 0.26998833, 0.8235294)
 
 [node name="LeftZone" type="Area3D" parent="Misc"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8087244, -5.1429663, -22.167446)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8087244, -5.1429663, -97.16745)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Misc/LeftZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55419254, 0.37075806)
@@ -143,7 +47,7 @@ shape = SubResource("BoxShape3D_ykdk0")
 debug_color = Color(0.9291779, 0, 0.26998833, 0.8235294)
 
 [node name="RightZone" type="Area3D" parent="Misc"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.482877, -5.1429663, -22.167446)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.482877, -5.1429663, -97.16745)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Misc/RightZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51538086, 0.5360718, 0.29541016)
@@ -151,6 +55,7 @@ shape = SubResource("BoxShape3D_wmfdp")
 debug_color = Color(0.9291779, 0, 0.26998833, 0.8235294)
 
 [node name="Pivots" type="Node3D" parent="Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -75)
 
 [node name="CenterPivot" type="Marker3D" parent="Misc/Pivots"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.276279, -30.182455)

@@ -388,6 +388,13 @@ use_collision = true
 flip_faces = true
 size = Vector3(3.2747192, 5.4135437, 1.2473755)
 
+[node name="DoorcutA3" type="CSGBox3D" parent="Map/Build/Core"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.38517, -0.007490635, -13.872818)
+use_collision = true
+flip_faces = true
+size = Vector3(5.187052, 7.3055344, 3.7790833)
+material = SubResource("StandardMaterial3D_f37hs")
+
 [node name="DoorcutA2" type="CSGBox3D" parent="Map/Build/Core"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7485237, -0.95348597, -36.21762)
 use_collision = true
@@ -402,10 +409,10 @@ size = Vector3(7.232544, 7.3241577, 30)
 material = SubResource("StandardMaterial3D_f37hs")
 
 [node name="Core17" type="CSGBox3D" parent="Map/Build/Core"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.97465, 0.0018210411, -8.643036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.97465, 0.0018210411, -7.9368896)
 use_collision = true
 flip_faces = true
-size = Vector3(7.232544, 7.3241577, 4)
+size = Vector3(7.232544, 7.3241577, 2.5304565)
 material = SubResource("StandardMaterial3D_f37hs")
 
 [node name="Core19" type="CSGBox3D" parent="Map/Build/Core"]
@@ -416,10 +423,17 @@ size = Vector3(7.232544, 7.3241577, 4)
 material = SubResource("StandardMaterial3D_f37hs")
 
 [node name="Core18" type="CSGBox3D" parent="Map/Build/Core"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.97465, 3.3397422, -22.143036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.03422, 3.3397422, -22.143036)
 use_collision = true
 flip_faces = true
-size = Vector3(38, 14, 27)
+size = Vector3(37.88086, 14, 27)
+material = SubResource("StandardMaterial3D_f37hs")
+
+[node name="Core29" type="CSGBox3D" parent="Map/Build/Core"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.952435, -0.15891504, -22.054745)
+use_collision = true
+flip_faces = true
+size = Vector3(7.251465, 7.0026855, 20.602425)
 material = SubResource("StandardMaterial3D_f37hs")
 
 [node name="Core21" type="CSGBox3D" parent="Map/Build/Core"]
@@ -510,6 +524,24 @@ use_collision = true
 flip_faces = true
 size = Vector3(4, 5, 0.3690796)
 
+[node name="Core30" type="CSGBox3D" parent="Map/Build/Core"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.157904, 0.5, -22.004465)
+use_collision = true
+flip_faces = true
+size = Vector3(4, 5, 0.3690796)
+
+[node name="Core31" type="CSGBox3D" parent="Map/Build/Core"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.157904, 0.5, -28.928413)
+use_collision = true
+flip_faces = true
+size = Vector3(4, 5, 0.3690796)
+
+[node name="Core32" type="CSGBox3D" parent="Map/Build/Core"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.157904, 0.5, -15.304327)
+use_collision = true
+flip_faces = true
+size = Vector3(4, 5, 0.3690796)
+
 [node name="Core4" type="CSGBox3D" parent="Map/Build/Core"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, -25.299393)
 use_collision = true
@@ -532,12 +564,27 @@ flip_faces = true
 size = Vector3(3.7017212, 1, 28)
 material = SubResource("StandardMaterial3D_f37hs")
 
+[node name="Core27" type="CSGBox3D" parent="Map/Build/Core"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.09185, 7.3575063, -27.319199)
+use_collision = true
+flip_faces = true
+size = Vector3(4.1856995, 5.9589844, 17.998444)
+material = SubResource("StandardMaterial3D_f37hs")
+
 [node name="Core16" type="CSGBox3D" parent="Map/Build/Core"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.885094, 4.309289, -22.40738)
 operation = 2
 use_collision = true
 flip_faces = true
 size = Vector3(0.37073925, 1.9445801, 28)
+material = SubResource("StandardMaterial3D_f37hs")
+
+[node name="Core28" type="CSGBox3D" parent="Map/Build/Core"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.184301, 4.4411855, -27.689606)
+operation = 2
+use_collision = true
+flip_faces = true
+size = Vector3(0.37073925, 1.6807861, 17.435547)
 material = SubResource("StandardMaterial3D_f37hs")
 
 [node name="Core6" type="CSGBox3D" parent="Map/Build/Core"]
@@ -605,6 +652,14 @@ size = Vector3(468, 1, 356)
 transform = Transform3D(4.371138e-08, 1, 8.868501e-08, 1, -4.371138e-08, 3.723519e-22, 3.821371e-15, 8.742278e-08, -1.0144383, 65.93703, 10.562792, -24.398487)
 mesh = SubResource("ArrayMesh_rn32k")
 
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Map/Build/Core"]
+transform = Transform3D(1.4514641e-15, -4.371139e-08, 1.3975754, -0.75965625, -4.371139e-08, 0, 3.320563e-08, -1, -6.108996e-08, 10.746471, 8.618631, -25.537014)
+flip_faces = true
+radius = 9.894531
+height = 12.657394
+sides = 7
+material = SubResource("StandardMaterial3D_f37hs")
+
 [node name="CSGBox3D2" type="CSGBox3D" parent="Map/Build"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.4111586, 2.6539726, 3.680591, -24.376392)
 size = Vector3(1.3995361, 7.4960938, 0.2939453)
@@ -626,23 +681,43 @@ size = Vector3(1.3995361, 14, 1)
 material = SubResource("StandardMaterial3D_lr8c4")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Map/Build"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.89151, 6.932544, -27.89234)
-size = Vector3(1.3995361, 14, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.89151, 7.025867, -27.89234)
+size = Vector3(1.3995361, 14.1866455, 1)
 material = SubResource("StandardMaterial3D_lr8c4")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Map/Build"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.591278, 6.932544, -27.89234)
-size = Vector3(1, 14, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.591278, 6.982807, -27.89234)
+size = Vector3(1, 14.100525, 1)
 material = SubResource("StandardMaterial3D_lr8c4")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Map/Build"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.591278, 6.932544, -27.89234)
-size = Vector3(1, 14, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.591278, 6.9750247, -27.89234)
+size = Vector3(1, 14.084961, 1)
+material = SubResource("StandardMaterial3D_lr8c4")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Map/Build"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 9.048798, 13.975025, -27.97315)
+size = Vector3(1, 29, 1.1616211)
+material = SubResource("StandardMaterial3D_lr8c4")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Map/Build"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 9.048798, 13.975025, -41.39835)
+size = Vector3(1, 29, 1.1616211)
+material = SubResource("StandardMaterial3D_lr8c4")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Map/Build"]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 23.635914, 13.975025, -34.473152)
+size = Vector3(1, 14, 1.0994873)
+material = SubResource("StandardMaterial3D_lr8c4")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Map/Build"]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, -4.190624, 13.975025, -34.473152)
+size = Vector3(1, 14, 1.0994873)
 material = SubResource("StandardMaterial3D_lr8c4")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Map/Build"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.092101, 6.932544, -27.89234)
-size = Vector3(1, 14, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.092101, 6.9733157, -27.89234)
+size = Vector3(1, 14.081543, 1)
 material = SubResource("StandardMaterial3D_lr8c4")
 
 [node name="CSGBakedMeshInstance3D12" type="MeshInstance3D" parent="Map/Build"]
@@ -688,6 +763,36 @@ material = SubResource("StandardMaterial3D_lr8c4")
 [node name="CSGBox3D17" type="CSGBox3D" parent="Map/Build"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 31.909664, 6.932544, -37.71632)
 size = Vector3(0.86550903, 14, 1)
+material = SubResource("StandardMaterial3D_lr8c4")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Map/Build"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 27.986027, 6.932544, -44.93681)
+size = Vector3(0.86550903, 14, 1)
+material = SubResource("StandardMaterial3D_lr8c4")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Map/Build"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 24.040178, 6.932544, -44.93681)
+size = Vector3(0.86550903, 14, 1)
+material = SubResource("StandardMaterial3D_lr8c4")
+
+[node name="CSGBakedMeshInstance3D19" type="MeshInstance3D" parent="Map/Build"]
+transform = Transform3D(-8.182293e-08, 0, 0.91699994, 0, 0.917, 0, -0.37437814, 0, -2.0041671e-07, 24.390001, 8.61742, -38.094177)
+mesh = SubResource("ArrayMesh_gksrf")
+surface_material_override/0 = SubResource("StandardMaterial3D_7yvl8")
+
+[node name="CSGBakedMeshInstance3D20" type="MeshInstance3D" parent="Map/Build"]
+transform = Transform3D(-8.182293e-08, 0, 0.91699994, 0, 0.917, 0, -0.37437814, 0, -2.0041671e-07, 24.390001, 8.61742, -31.25887)
+mesh = SubResource("ArrayMesh_gksrf")
+surface_material_override/0 = SubResource("StandardMaterial3D_7yvl8")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Map/Build"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24.155117, 7.011646, -41.482822)
+size = Vector3(0.9537506, 14.158203, 1)
+material = SubResource("StandardMaterial3D_lr8c4")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Map/Build"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 24.142443, 7.0358157, -34.606834)
+size = Vector3(0.86550903, 14.206543, 1)
 material = SubResource("StandardMaterial3D_lr8c4")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Map/Build"]
@@ -954,7 +1059,7 @@ size = Vector3(8.811523, 6.2578125, 0.2763672)
 material = SubResource("StandardMaterial3D_ry4i6")
 
 [node name="Player" parent="." instance=ExtResource("2_wcbn8")]
-transform = Transform3D(1.488, 0, 0, 0, 1.488, 0, 0, 0, 1.488, -0.8623929, 0, -1.7926188)
+transform = Transform3D(1.488, 0, 0, 0, 1.488, 0, 0, 0, 1.488, -0.8623929, 0.32563853, -1.7926188)
 
 [node name="Enviroment" type="Node3D" parent="."]
 
@@ -1047,6 +1152,34 @@ omni_range = 25.93
 
 [node name="OmniLight3D16" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.185078, 0.48936296, -47.196648)
+light_color = Color(0.69027984, 0.5522815, 0, 1)
+light_energy = 2.162
+shadow_enabled = true
+omni_range = 25.93
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.60958, 0.48936296, 6.9786086)
+light_color = Color(0.69027984, 0.5522815, 0, 1)
+light_energy = 2.162
+shadow_enabled = true
+omni_range = 25.93
+
+[node name="OmniLight3D19" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.252388, 0.48936296, 2.1454368)
+light_color = Color(0.69027984, 0.5522815, 0, 1)
+light_energy = 2.162
+shadow_enabled = true
+omni_range = 25.93
+
+[node name="OmniLight3D21" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.062323, 0.48936296, -17.82179)
+light_color = Color(0.69027984, 0.5522815, 0, 1)
+light_energy = 2.162
+shadow_enabled = true
+omni_range = 25.93
+
+[node name="OmniLight3D20" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.51767, 0.48936296, 11.749666)
 light_color = Color(0.69027984, 0.5522815, 0, 1)
 light_energy = 2.162
 shadow_enabled = true
@@ -1166,6 +1299,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.175274, 4.158594, -23.97783
 
 [node name="CSGBakedMeshInstance3D" parent="Temp Furn/XMeshWindow3" instance=ExtResource("3_njimg")]
 transform = Transform3D(0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 0, 0, 1, -0.9356327, 0, 0.018903732)
+
+[node name="CSGBakedMeshInstance3D4" parent="Temp Furn/XMeshWindow3" instance=ExtResource("3_njimg")]
+transform = Transform3D(-3.0908616e-08, -3.0908616e-08, 1, -0.7071067, 0.7071067, 0, -0.7071067, -0.7071067, -4.371139e-08, 17.008024, 0, -7.1538773)
+
+[node name="CSGBakedMeshInstance3D5" parent="Temp Furn/XMeshWindow3" instance=ExtResource("3_njimg")]
+transform = Transform3D(-3.0908616e-08, -3.0908616e-08, 1, -0.7071067, 0.7071067, 0, -0.7071067, -0.7071067, -4.371139e-08, 17.008024, 0, -14.077826)
+
+[node name="CSGBakedMeshInstance3D6" parent="Temp Furn/XMeshWindow3" instance=ExtResource("3_njimg")]
+transform = Transform3D(-3.0908616e-08, -3.0908616e-08, 1, -0.7071067, 0.7071067, 0, -0.7071067, -0.7071067, -4.371139e-08, 17.008024, 0, -0.45373917)
 
 [node name="CSGBakedMeshInstance3D2" parent="Temp Furn/XMeshWindow3" instance=ExtResource("3_njimg")]
 transform = Transform3D(0, -7.609702e-08, -1.231, -0.8704484, -0.8704484, 5.3808716e-08, -0.8704484, 0.8704484, -5.3808716e-08, 59.240665, 2.1642895, -10.5296)
