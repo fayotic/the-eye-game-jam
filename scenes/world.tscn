@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cuk5v8405xx6k"]
+[gd_scene load_steps=41 format=3 uid="uid://cuk5v8405xx6k"]
 
 [ext_resource type="Script" uid="uid://dbs426uja00ey" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="1_nnsk1"]
@@ -22,6 +22,8 @@
 [ext_resource type="Script" uid="uid://dasu4geaqsw4t" path="res://scenes/level1-triggers/blazer.gd" id="18_kpybi"]
 [ext_resource type="Texture2D" uid="uid://c60cswujpnull" path="res://meshes/PS1_ArabianStyle/SofaBed/texture/LowPoly_SofaBed_Pillow_Metallic.png" id="19_xgqkh"]
 [ext_resource type="Texture2D" uid="uid://d4d3vk47jjevd" path="res://meshes/PS1_ArabianStyle/SofaBed/texture/LowPoly_SofaBed_Pillow_Roughness.png" id="20_munwf"]
+[ext_resource type="Script" uid="uid://cygrtrhwxgn7f" path="res://scenes/level1-triggers/fairy.gd" id="23_ctatt"]
+[ext_resource type="PackedScene" uid="uid://0jop8jxa6221" path="res://components/cutscenes/fairy_scene_level_0.tscn" id="24_xgqkh"]
 
 [sub_resource type="Gradient" id="Gradient_e5uuo"]
 colors = PackedColorArray(1, 1, 1, 1, 0.47788018, 0.47788012, 0.47788012, 1)
@@ -87,6 +89,10 @@ emission_texture = ExtResource("18_ctatt")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xgqkh"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_munwf"]
+height = 0.32958984
+radius = 0.45996094
+
 [node name="World" type="Node3D" node_paths=PackedStringArray("dialogue_system")]
 script = ExtResource("1_4wyf3")
 dialogue_system = NodePath("DialogueSystem")
@@ -116,7 +122,7 @@ shadow_enabled = true
 [node name="Entities" type="Node3D" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("1_nnsk1")]
-transform = Transform3D(0.8485287, 0, 0.5291494, 0, 1, 0, -0.5291494, 0, 0.8485287, 0.5987501, 0.8857908, -1.1658369)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5288193, -1.3056992)
 
 [node name="Misc" type="Node3D" parent="."]
 
@@ -129,6 +135,16 @@ grow_vertical = 2
 
 [node name="Maryam_Waking" parent="." instance=ExtResource("5_71j4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0477666, 1.59119, -0.1858257)
+
+[node name="FairySceneLevel0" parent="." instance=ExtResource("24_xgqkh")]
+transform = Transform3D(-0.9135028, 0, 0.4068324, 0, 1, 0, -0.4068324, 0, -0.9135028, 0, -0.71637416, -5.829363)
+visible = false
+
+[node name="CollisionShape3D" parent="FairySceneLevel0" index="4"]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0.5860758, 1.0619645, 3.1562495)
+
+[node name="Camera3D" parent="FairySceneLevel0/CollisionShape3D" index="0"]
+current = false
 
 [node name="Transitions" type="Node2D" parent="."]
 
@@ -187,5 +203,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Fairy" type="Area3D" parent="Triggers" node_paths=PackedStringArray("fairy_animation", "fairy_cutscene", "blazer_node", "fairy_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8483732, -16.597097)
+script = ExtResource("23_ctatt")
+fairy_animation = NodePath("../../FairySceneLevel0/AnimationPlayer")
+fairy_cutscene = NodePath("../../FairySceneLevel0")
+blazer_node = NodePath("../Blazer")
+fairy_camera = NodePath("../../FairySceneLevel0/CollisionShape3D/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/Fairy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29396713, -2.175775, 8.346)
+shape = SubResource("CylinderShape3D_munwf")
+
 [connection signal="body_entered" from="Triggers/Hookah" to="Triggers/Hookah" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/Blazer" to="Triggers/Blazer" method="_on_body_entered"]
+[connection signal="body_entered" from="Triggers/Fairy" to="Triggers/Fairy" method="_on_body_entered"]
+
+[editable path="FairySceneLevel0"]
+[editable path="FairySceneLevel0/NPC_Fairy"]
