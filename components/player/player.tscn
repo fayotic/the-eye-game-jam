@@ -1,26 +1,114 @@
-[gd_scene load_steps=6 format=3 uid="uid://5rqbxtnr54xt"]
+[gd_scene load_steps=10 format=3 uid="uid://5rqbxtnr54xt"]
 
 [ext_resource type="Script" uid="uid://noqrinxktevj" path="res://components/player/player.gd" id="1_t3162"]
-[ext_resource type="Shader" uid="uid://kj3q4v4d6j70" path="res://ps1_esque.gdshader" id="2_kfe3d"]
+[ext_resource type="PackedScene" uid="uid://ddnwt5o4uc0ok" path="res://components/weapons/sword.tscn" id="2_kfe3d"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kfe3d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wa6cj"]
+
+[sub_resource type="Animation" id="Animation_mpawu"]
+resource_name = "sword_idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.353096, -0.9576266, 0.62272125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.40648878, 2.7259874, 0.4330085)]
+}
+
+[sub_resource type="Animation" id="Animation_pvtfm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.353096, -0.9576266, 0.62272125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.40648878, 2.7259874, 0.4330085)]
+}
+
+[sub_resource type="Animation" id="Animation_02tnr"]
+resource_name = "sword_swinging"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.94511414, -1.1403148, -0.7847879), Vector3(0.45746136, -2.2263546, -0.7433672), Vector3(-0.353096, -0.9576266, 0.62272125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.12157496, -2.815119, 0.5711085), Vector3(0.424115, -2.8379054, 0.63006383), Vector3(0.40666172, -3.3405602, 0.43284166)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bv0o5"]
+_data = {
+&"RESET": SubResource("Animation_pvtfm"),
+&"sword_idle": SubResource("Animation_mpawu"),
+&"sword_swinging": SubResource("Animation_02tnr")
+}
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cifxd"]
 points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ph1f6"]
-render_priority = 0
-shader = ExtResource("2_kfe3d")
-shader_parameter/pixel_size = 4
-
-[sub_resource type="QuadMesh" id="QuadMesh_wa6cj"]
-material = SubResource("ShaderMaterial_ph1f6")
-
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(0.031811956, 0, -0.9994939, 0, 1, 0, 0.9994939, 0, 0.031811956, 0, 0, 0)
 script = ExtResource("1_t3162")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8438604, 0)
-shape = SubResource("ConvexPolygonShape3D_cifxd")
-disabled = true
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022995102, 0.72226703, 0.07224788)
+visible = false
+mesh = SubResource("CapsuleMesh_kfe3d")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4064568, 0)
@@ -28,6 +116,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4064568, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 current = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.15966368)
-mesh = SubResource("QuadMesh_wa6cj")
+[node name="ArmColl" type="CollisionShape3D" parent="Head/Camera3D"]
+transform = Transform3D(0.1810563, -0.08212771, -0.021764083, 0.08187443, 0.182341, -0.006954347, 0.022698136, -0.0026139668, 0.19869071, 0.59364593, -0.42052472, -0.18368912)
+shape = SubResource("SphereShape3D_wa6cj")
+
+[node name="Sword" parent="Head/Camera3D/ArmColl" instance=ExtResource("2_kfe3d")]
+transform = Transform3D(-0.76345295, 0.5287879, 0.3708452, 0.38541204, 0.83374685, -0.39538732, -0.51826364, -0.15893191, -0.840325, -0.353096, -0.9576266, 0.62272125)
+
+[node name="LowPolySword" parent="Head/Camera3D/ArmColl/Sword" index="0"]
+transform = Transform3D(-0.004915848, 0.067631625, -0.07349693, -0.07390273, 0.04703773, 0.048226945, 0.06718796, 0.056686997, 0.047669306, 0.32760143, 1.1552196, 0.16875362)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/Camera3D/ArmColl/Sword"]
+libraries = {
+&"": SubResource("AnimationLibrary_bv0o5")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022995104, 0.7536957, 0.07224788)
+shape = SubResource("ConvexPolygonShape3D_cifxd")
+
+[editable path="Head/Camera3D/ArmColl/Sword"]
