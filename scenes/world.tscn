@@ -121,8 +121,12 @@ shadow_enabled = true
 
 [node name="Entities" type="Node3D" parent="."]
 
-[node name="Player" parent="Entities" instance=ExtResource("1_nnsk1")]
+[node name="Player" parent="Entities" node_paths=PackedStringArray("fairy_scene") instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5288193, -1.3056992)
+fairy_scene = NodePath("../../FairySceneLevel0")
+
+[node name="Sword" parent="Entities/Player/Head/Camera3D/ArmColl" index="0"]
+visible = false
 
 [node name="Misc" type="Node3D" parent="."]
 
@@ -133,12 +137,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Maryam_Waking" parent="." instance=ExtResource("5_71j4m")]
+[node name="Maryam_Waking" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_71j4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0477666, 1.59119, -0.1858257)
+player = NodePath("../Entities/Player")
 
-[node name="FairySceneLevel0" parent="." instance=ExtResource("24_xgqkh")]
+[node name="FairySceneLevel0" parent="." node_paths=PackedStringArray("fairy_trigger_collision", "player_cam", "player") instance=ExtResource("24_xgqkh")]
 transform = Transform3D(-0.9135028, 0, 0.4068324, 0, 1, 0, -0.4068324, 0, -0.9135028, 0, -0.71637416, -5.829363)
 visible = false
+fairy_trigger_collision = NodePath("../Triggers/Fairy/CollisionShape3D")
+player_cam = NodePath("../Entities/Player/Head/Camera3D")
+player = NodePath("../Entities/Player")
 
 [node name="CollisionShape3D" parent="FairySceneLevel0" index="4"]
 transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0.5860758, 1.0619645, 3.1562495)
@@ -219,5 +227,7 @@ shape = SubResource("CylinderShape3D_munwf")
 [connection signal="body_entered" from="Triggers/Blazer" to="Triggers/Blazer" method="_on_body_entered"]
 [connection signal="body_entered" from="Triggers/Fairy" to="Triggers/Fairy" method="_on_body_entered"]
 
+[editable path="Entities/Player"]
+[editable path="Entities/Player/Head/Camera3D/ArmColl/Sword"]
 [editable path="FairySceneLevel0"]
 [editable path="FairySceneLevel0/NPC_Fairy"]

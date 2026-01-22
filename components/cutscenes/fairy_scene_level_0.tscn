@@ -1,8 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://0jop8jxa6221"]
+[gd_scene load_steps=22 format=3 uid="uid://0jop8jxa6221"]
 
 [ext_resource type="Script" uid="uid://6wmm2cyrag2d" path="res://components/cutscenes/fairy_scene_level_0.gd" id="1_pit28"]
 [ext_resource type="PackedScene" uid="uid://c2twa3fraraxo" path="res://components/npcs/npc_fairy.tscn" id="1_sk2k6"]
 [ext_resource type="PackedScene" uid="uid://dd6fdpja708v3" path="res://components/dialogue/dialogue_system.tscn" id="3_xpgmu"]
+[ext_resource type="ArrayMesh" uid="uid://b8216if8qg4gs" path="res://meshes/PS1_ArabianStyle/Sword/LowPoly_Sword.obj" id="4_5jpak"]
+[ext_resource type="Texture2D" uid="uid://bot2sarnpisj4" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_BaseColor.png" id="5_rvn8x"]
+[ext_resource type="Texture2D" uid="uid://d4jv4f48fbskv" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Emissive.png" id="6_c81xa"]
+[ext_resource type="Texture2D" uid="uid://bimpabwkdbcsh" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Metallic.png" id="7_8hnwt"]
+[ext_resource type="Texture2D" uid="uid://cresjnav50pe3" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Roughness.png" id="8_hiaak"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pit28"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -3797,6 +3802,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0.06981317, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LowPolySword:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.041859865, 1.4740663, 5.0117116)]
+}
 
 [sub_resource type="Animation" id="Animation_xpgmu"]
 resource_name = "mayram_turning"
@@ -3842,14 +3859,40 @@ tracks/0/keys = {
 "values": [Vector3(0, 3.0207112, 0), Vector3(0, 1.6737708, 0), Vector3(0, 1.6737708, 0), Vector3(0, 3.0207112, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_5jpak"]
+resource_name = "sword floating"
+length = 0.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LowPolySword:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.042, 1.854, 5.012), Vector3(-0.042, 1.475, 5.012)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yhy8w"]
 _data = {
 &"RESET": SubResource("Animation_ma5jl"),
 &"mayram_turning": SubResource("Animation_xpgmu"),
-&"mayram_windows": SubResource("Animation_vk074")
+&"mayram_windows": SubResource("Animation_vk074"),
+&"sword floating": SubResource("Animation_5jpak")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yhy8w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fawr8"]
+albedo_texture = ExtResource("5_rvn8x")
+metallic = 1.0
+metallic_texture = ExtResource("7_8hnwt")
+roughness_texture = ExtResource("8_hiaak")
+emission_enabled = true
+emission_texture = ExtResource("6_c81xa")
 
 [node name="FairySceneLevel0" type="Node3D"]
 script = ExtResource("1_pit28")
@@ -4007,6 +4050,12 @@ transform = Transform3D(1, 0, 0, 0, 0.9975641, -0.06975647, 0, 0.06975647, 0.997
 current = true
 
 [node name="DialogueSystem" parent="." instance=ExtResource("3_xpgmu")]
+
+[node name="LowPolySword" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.041859865, 1.4740663, 5.0117116)
+visible = false
+mesh = ExtResource("4_5jpak")
+surface_material_override/0 = SubResource("StandardMaterial3D_fawr8")
 
 [connection signal="animation_finished" from="NPC_Fairy/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
