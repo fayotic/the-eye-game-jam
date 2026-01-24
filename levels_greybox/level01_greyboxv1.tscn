@@ -49,12 +49,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1
 use_collision = true
 size = Vector3(0.25, 2.5, 33)
 
-[node name="DoorFrame" type="CSGCylinder3D" parent="CSGBox3D6"]
-transform = Transform3D(-1.540628e-07, -0.99999994, 7.1054274e-15, 3.5245461, -4.3711385e-08, 0, 0, 0, 2.001521, 9.426164e-07, -1.0265863, 12.328636)
-operation = 2
-height = 1.0
-sides = 11
-
 [node name="DoorFrame2" type="CSGCylinder3D" parent="CSGBox3D6"]
 transform = Transform3D(-1.540628e-07, -0.99999994, 7.1054274e-15, 3.5245461, -4.3711385e-08, 0, 0, 0, 2.001521, 5.7440246e-07, -1.0265863, 3.9048834)
 operation = 2
