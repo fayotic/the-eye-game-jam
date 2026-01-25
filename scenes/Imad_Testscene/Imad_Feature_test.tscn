@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgqcdrwwf1op7"]
+
+[ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="1_ycpnv"]
+[ext_resource type="Script" uid="uid://042okb7rv7tu" path="res://scenes/Imad_Testscene/damageArea.gd" id="2_fjowo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ltvb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycpnv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ycpnv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ycpnv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjowo"]
+
+[node name="ImadFeatureTest" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(17.73664, 0, 0, 0, 0.16337673, 0, 0, 0, -30.880743, 0, 0, 0)
+mesh = SubResource("BoxMesh_2ltvb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_ycpnv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.041207295, 0, 0, 0, 5.418859, 0, 0, 0, -0.021234795, 0.04372436, 6.3587623, 0.31586826)
+mesh = SubResource("CapsuleMesh_ycpnv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("CapsuleShape3D_ycpnv")
+
+[node name="Player" parent="." instance=ExtResource("1_ycpnv")]
+transform = Transform3D(0.031811956, 0, -0.9994939, 0, 1, 0, 0.9994939, 0, 0.031811956, 0, 0.9729095, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.19952191, 0.9798934, 0, -0.9798934, 0.19952191, 0, 17.932764, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1.3982491, 0, 0, 0, 1, 0, 0, 0, 1.5316725, 0.6781386, 1.0202602, -9.542746)
+script = ExtResource("2_fjowo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35136223)
+shape = SubResource("BoxShape3D_fjowo")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

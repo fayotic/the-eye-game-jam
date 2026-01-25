@@ -11,12 +11,13 @@ var is_equipped = false
 @onready var animation = $Head/Camera3D/ArmColl/Sword/AnimationPlayer
 @export var lerp_speed = 10.0
 @export var fairy_scene : Node3D
-
-
+@onready var health: HealthComponent = $HealthComponentNode
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("Player")
+	health.died.connect(_on_died)
+	health.health_changed.connect(_on_health_changed)
 
 #Gets input from user to equip/unequip an item
 func _process(delta: float) -> void:
@@ -73,3 +74,11 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0.0
 
 	move_and_slide()
+	
+func _on_died():
+	print("Player dead"); #TODO: Play death animation + respawn
+	
+	
+func _on_health_changed(current, max):
+	print("Player HP:", current, "/", max)
+	

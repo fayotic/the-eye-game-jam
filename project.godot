@@ -22,6 +22,10 @@ DataManager="*res://autoloads/data_manager.gd"
 EventBus="*res://autoloads/event_bus.gd"
 SettingsManager="*res://autoloads/settings_manager.gd"
 
+[dotnet]
+
+project/assembly_name="the-eye-game-jam"
+
 [input]
 
 move_left={

@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://5rqbxtnr54xt"]
+[gd_scene load_steps=11 format=3 uid="uid://5rqbxtnr54xt"]
 
+[ext_resource type="Script" uid="uid://b54emypeedxhk" path="res://components/HealthComponent/HealthComponent.gd" id="1_kfe3d"]
 [ext_resource type="Script" uid="uid://noqrinxktevj" path="res://components/player/player.gd" id="1_t3162"]
 [ext_resource type="PackedScene" uid="uid://ddnwt5o4uc0ok" path="res://components/weapons/sword.tscn" id="2_kfe3d"]
 
@@ -7,10 +8,8 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wa6cj"]
 
-[sub_resource type="Animation" id="Animation_mpawu"]
-resource_name = "sword_idle"
-length = 0.1
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_pvtfm"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,8 +35,10 @@ tracks/1/keys = {
 "values": [Vector3(0.40648878, 2.7259874, 0.4330085)]
 }
 
-[sub_resource type="Animation" id="Animation_pvtfm"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_mpawu"]
+resource_name = "sword_idle"
+length = 0.1
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -134,5 +135,8 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022995104, 0.7536957, 0.07224788)
 shape = SubResource("ConvexPolygonShape3D_cifxd")
+
+[node name="HealthComponentNode" type="Node" parent="."]
+script = ExtResource("1_kfe3d")
 
 [editable path="Head/Camera3D/ArmColl/Sword"]
