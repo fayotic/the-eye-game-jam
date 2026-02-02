@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgqcdrwwf1op7"]
+[gd_scene load_steps=9 format=3 uid="uid://cgqcdrwwf1op7"]
 
+[ext_resource type="Script" uid="uid://d2npk5j42in44" path="res://scenes/Imad_Testscene/imad_feature_test.gd" id="1_goeld"]
 [ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="1_ycpnv"]
 [ext_resource type="Script" uid="uid://042okb7rv7tu" path="res://scenes/Imad_Testscene/damageArea.gd" id="2_fjowo"]
 
@@ -14,6 +15,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjowo"]
 
 [node name="ImadFeatureTest" type="Node3D"]
+script = ExtResource("1_goeld")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(17.73664, 0, 0, 0, 0.16337673, 0, 0, 0, -30.880743, 0, 0, 0)
@@ -34,7 +36,7 @@ mesh = SubResource("CapsuleMesh_ycpnv")
 shape = SubResource("CapsuleShape3D_ycpnv")
 
 [node name="Player" parent="." instance=ExtResource("1_ycpnv")]
-transform = Transform3D(0.031811956, 0, -0.9994939, 0, 1, 0, 0.9994939, 0, 0.031811956, 0, 0.9729095, 0)
+transform = Transform3D(0.031811956, 0, -0.9994939, 0, 1, 0, 0.9994939, 0, 0.031811956, 0, 1.2868922, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.19952191, 0.9798934, 0, -0.9798934, 0.19952191, 0, 17.932764, 0)
@@ -46,5 +48,13 @@ script = ExtResource("2_fjowo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35136223)
 shape = SubResource("BoxShape3D_fjowo")
+
+[node name="RespawnPoints" type="Node3D" parent="."]
+
+[node name="RespawnPoint_1" type="Node3D" parent="RespawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6815405, 1.0436792, 9.8674965)
+
+[node name="RespawnPoint_2" type="Node3D" parent="RespawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.293137, 0, -7.629652)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

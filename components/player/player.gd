@@ -13,6 +13,8 @@ var is_equipped = false
 @export var fairy_scene : Node3D
 @onready var health: HealthComponent = $HealthComponentNode
 
+signal player_died
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("Player")
@@ -76,7 +78,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _on_died():
-	print("Player dead"); #TODO: Play death animation + respawn
+	print("Player dead"); #TODO: Play death animation
+	player_died.emit()
 	
 	
 func _on_health_changed(current, max):
