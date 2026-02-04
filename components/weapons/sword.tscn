@@ -28,6 +28,10 @@ transform = Transform3D(-0.014747546, 0.20289487, -0.22049078, -0.2217082, 0.141
 mesh = ExtResource("1_a0blx")
 surface_material_override/0 = SubResource("StandardMaterial3D_c14hh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LowPolySword"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 39.88264, 0)
+[node name="Area3D" type="Area3D" parent="LowPolySword"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LowPolySword/Area3D"]
+transform = Transform3D(1, 1.4901161e-08, 1.4901161e-08, 1.4901161e-08, 1.0000001, 5.9604645e-08, 0, -2.9802322e-08, 1.0000001, 0, 39.88265, -3.695488e-06)
 shape = SubResource("CapsuleShape3D_u1nis")
+
+[connection signal="body_entered" from="LowPolySword/Area3D" to="." method="_on_area_3d_body_entered"]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cih7ew10jnk75"
-path="res://.godot/imported/PlayerCharacter_v1.0.glb-4e68c1774c6cae8c7a4d7936244bf85c.scn"
+uid="uid://dsc8o7n3whtvi"
+path="res://.godot/imported/NPC_Fairy.glb-146af1ef750d30610166a417dd4a88ea.scn"
 
 [deps]
 
-source_file="res://humancharacter_mod_tex_ani/PlayerCharacter_v1.0.glb"
-dest_files=["res://.godot/imported/PlayerCharacter_v1.0.glb-4e68c1774c6cae8c7a4d7936244bf85c.scn"]
+source_file="res://components/npcs/humancharacter_mod_tex_ani/NPC_Fairy.glb"
+dest_files=["res://.godot/imported/NPC_Fairy.glb-146af1ef750d30610166a417dd4a88ea.scn"]
 
 [params]
 

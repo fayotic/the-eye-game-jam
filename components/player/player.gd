@@ -12,6 +12,7 @@ var is_equipped = false
 @onready var animation = $Head/Camera3D/ArmColl/Sword/AnimationPlayer
 @export var lerp_speed = 10.0
 @export var fairy_scene : Node3D
+@export var inventory: InventorySystem
 @onready var health: HealthComponent = $HealthComponentNode
 @export var max_stamina := 100.0
 @export var stamina := 100.0
@@ -26,22 +27,28 @@ func _ready():
 
 #Gets input from user to equip/unequip an item
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("equip") and fairy_scene.scene_done == true : #e
+	if Input.is_action_pressed("equip") and is_equipped == false and fairy_scene.scene_done == true : #e
 		is_equipped = true
 		equipSword()
-	if Input.is_action_pressed("unequip"): #q
+	if Input.is_action_pressed("unequip") and fairy_scene.scene_done == true: #q
 		is_equipped = false
 		unequipSword()
 	if Input.is_action_pressed("attack"): #left mouse
 		animation.play("sword_swinging")
 		
+	
+		
 func equipSword():
 	if is_equipped == true:
 		sword.show() #Shows sword
+		animation.play("sword_equip")
+		await animation.animation_finished
 		animation.play("sword_idle") #Plays idle animation
 		
 func unequipSword():
 	if is_equipped == false:
+		animation.play("sword_unequip")
+		await animation.animation_finished
 		sword.hide() #Hides sword
 	
 func _input(event):
