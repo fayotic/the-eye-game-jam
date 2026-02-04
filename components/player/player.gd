@@ -3,6 +3,7 @@ extends CharacterBody3D
 const SPEED = 16.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.001
+const SPEED_MULTIPLIER = 1.2
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -13,6 +14,10 @@ var is_equipped = false
 @export var fairy_scene : Node3D
 @export var inventory: InventorySystem
 @onready var health: HealthComponent = $HealthComponentNode
+@export var max_stamina := 100.0
+@export var stamina := 100.0
+@export var stamina_drain := 20.0   
+@export var stamina_regen := 15.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -60,6 +65,7 @@ func resume_movement():
 	set_physics_process(true)
 	
 func _physics_process(delta: float) -> void:
+	var current_speed = SPEED
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -73,12 +79,21 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_front", "move_back")
 	var direction = (head.transform * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		
+		if Input.is_action_pressed("sprint") && direction != Vector3.ZERO && is_on_floor():
+			current_speed *= SPEED_MULTIPLIER 
+			stamina -= stamina_drain * delta 
+		else:
+			stamina += stamina_regen * delta	
+			
+		stamina = clamp(stamina, 0.0, max_stamina)	
+		velocity.x = direction.x * current_speed
+		velocity.z = direction.z * current_speed
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
 
+	print(stamina)
 	move_and_slide()
 	
 func _on_died():
