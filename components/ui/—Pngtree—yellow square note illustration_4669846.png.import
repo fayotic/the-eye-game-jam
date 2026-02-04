@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdkr602koi1l"
-path="res://.godot/imported/Tex_Fairy.png-aeaf44a655c1ded2edb939502de2d684.ctex"
+uid="uid://pn7asyi0j8y0"
+path="res://.godot/imported/—Pngtree—yellow square note illustration_4669846.png-72674f01d9f159a589e1caac631f004a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://humancharacter_mod_tex_ani/Tex_Fairy.png"
-dest_files=["res://.godot/imported/Tex_Fairy.png-aeaf44a655c1ded2edb939502de2d684.ctex"]
+source_file="res://components/ui/—Pngtree—yellow square note illustration_4669846.png"
+dest_files=["res://.godot/imported/—Pngtree—yellow square note illustration_4669846.png-72674f01d9f159a589e1caac631f004a.ctex"]
 
 [params]
 

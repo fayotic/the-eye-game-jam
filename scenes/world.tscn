@@ -126,6 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5288193, -1.3056992)
 fairy_scene = NodePath("../../FairySceneLevel0")
 
 [node name="Sword" parent="Entities/Player/Head/Camera3D/ArmColl" index="0"]
+transform = Transform3D(-0.76345295, 0.5287879, 0.3708452, 0.38541204, 0.83374685, -0.39538732, -0.51826364, -0.15893191, -0.840325, -0.353096, -0.9576266, 0.62272125)
 visible = false
 
 [node name="Misc" type="Node3D" parent="."]

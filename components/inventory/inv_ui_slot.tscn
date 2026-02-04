@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs0flgrctwojr"]
+
+[ext_resource type="Texture2D" uid="uid://pn7asyi0j8y0" path="res://components/ui/—Pngtree—yellow square note illustration_4669846.png" id="1_2b0ng"]
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.9999981, -3.000002)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_2b0ng")
+centered = false

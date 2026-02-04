@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2twa3fraraxo"]
 
-[ext_resource type="PackedScene" uid="uid://dsc8o7n3whtvi" path="res://humancharacter_mod_tex_ani/NPC_Fairy.glb" id="1_64qqw"]
+[ext_resource type="PackedScene" uid="uid://dsc8o7n3whtvi" path="res://components/npcs/humancharacter_mod_tex_ani/NPC_Fairy.glb" id="1_64qqw"]
 
 [node name="NPC_Fairy" instance=ExtResource("1_64qqw")]
 

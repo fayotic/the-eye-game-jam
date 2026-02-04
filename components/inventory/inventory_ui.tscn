@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo57517gwqipw"]
+
+[ext_resource type="Script" uid="uid://bvknt2l840k0n" path="res://components/inventory/inventory_ui.gd" id="1_no843"]
+[ext_resource type="Texture2D" uid="uid://cv3et73q1k3ob" path="res://components/ui/—Pngtree—islamic style ring border hand_3819752.png" id="2_pn812"]
+[ext_resource type="PackedScene" uid="uid://bs0flgrctwojr" path="res://components/inventory/inv_ui_slot.tscn" id="3_mflri"]
+
+[node name="Inventory_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_no843")
+
+[node name="—pngtree—islamicStyleRingBorderHand3819752" type="Sprite2D" parent="."]
+position = Vector2(580, 306.00003)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_pn812")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 208.0
+offset_right = 680.0
+offset_bottom = 412.0
+columns = 2
+
+[node name="slot1" parent="GridContainer" instance=ExtResource("3_mflri")]
+layout_mode = 2
+
+[node name="slot2" parent="GridContainer" instance=ExtResource("3_mflri")]
+layout_mode = 2
+
+[node name="slot3" parent="GridContainer" instance=ExtResource("3_mflri")]
+layout_mode = 2
+
+[node name="slot4" parent="GridContainer" instance=ExtResource("3_mflri")]
+layout_mode = 2
