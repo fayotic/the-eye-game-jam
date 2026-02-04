@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body.has_node("HealthComponentNode"):
 		print("Treffer!")
-		body.get_node("HealthComponentNode").apply_damage(10)
+		body.get_node("HealthComponentNode").apply_damage(50)
