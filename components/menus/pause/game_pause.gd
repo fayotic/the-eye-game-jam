@@ -25,6 +25,7 @@ func settings() -> void:
 
 func exit_game() -> void:
 	SettingsManager.pause_game()
+	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
 
 func hide_pause(pause_menu: CanvasLayer, state) -> void:
