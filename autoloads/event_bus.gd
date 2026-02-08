@@ -8,3 +8,5 @@ signal menu_closed
 signal room_created(rotation_deg: float, world_position: Vector3)
 @warning_ignore("unused_signal")
 signal settings_toggled(menu: CanvasLayer, state: bool)
+@warning_ignore("unused_signal")
+signal event_channel_triggered(id: int)

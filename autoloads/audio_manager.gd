@@ -3,7 +3,6 @@ extends Node
 #Can be used to control both Global Sound and 3D Space sound
 #Avoids any audio being cut out like music or other things like that.
 
-#If any of this makes you perish inside I apologize 🙏 I learn based on who I work with 😅
 var default_db: float = -14.0 #I found -14.0 to be most comfortable, feel free to change it though
 var music_on_start: bool = true
 var stop_music_on_change: bool = true
@@ -62,3 +61,20 @@ func stop_all_sounds(stop_sfx: bool = true, stop_music: bool = true) -> void:
 		for m in get_tree().get_nodes_in_group("added_music"):
 			if m.is_inside_tree():
 				m.queue_free()
+
+func fade_out_group(group_name: String, duration: float = 1.0) -> void:
+	for node in get_tree().get_nodes_in_group(group_name):
+		if node is AudioStreamPlayer or node is AudioStreamPlayer3D:
+			_fade_out_node(node, duration)
+
+
+func _fade_out_node(node: Node, duration: float) -> void:
+	var initial_db = node.volume_db
+	var timer = 0.0
+	while timer < duration:
+		var t = timer / duration
+		node.volume_db = lerp(initial_db, -80.0, t)
+		await get_tree().create_timer(0.05).timeout
+		timer += 0.05
+	node.stop()
+	node.queue_free()

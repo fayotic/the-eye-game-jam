@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 16.0
+const SPEED = 7.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.001
 const SPEED_MULTIPLIER = 1.2
@@ -95,7 +95,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0.0
 		velocity.z = 0.0
 
-	print(stamina)
 	move_and_slide()
 	
 func _on_died():

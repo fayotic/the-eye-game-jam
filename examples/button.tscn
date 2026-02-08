@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbnno4mi4yrhc"]
+
+[ext_resource type="Script" uid="uid://7cd1tueubd8" path="res://examples/button.gd" id="1_fqhbk"]
+[ext_resource type="Script" uid="uid://drb50xyl4wx60" path="res://components/trigger zones/trigger_base.gd" id="2_xy1sc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8jpe"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fqhbk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqhbk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w2bg7"]
+height = 0.73413086
+radius = 0.6147461
+
+[node name="Button" type="Node3D"]
+script = ExtResource("1_fqhbk")
+
+[node name="base" type="CSGCylinder3D" parent="."]
+height = 0.080078125
+sides = 53
+material = SubResource("StandardMaterial3D_t8jpe")
+
+[node name="btn" type="MeshInstance3D" parent="base"]
+transform = Transform3D(0.868, 0, 0, 0, -0.066, -1.3106435e-07, 0, 9.9657225e-09, -0.868, 0, 0.059326172, -5.1864584e-09)
+mesh = SubResource("CylinderMesh_fqhbk")
+surface_material_override/0 = SubResource("StandardMaterial3D_fqhbk")
+
+[node name="EventTrigger" type="Area3D" parent="." node_paths=PackedStringArray("collision_zone", "parent_node")]
+script = ExtResource("2_xy1sc")
+handling_type = "Parent Interaction"
+collision_zone = NodePath("CollisionShape3D")
+search_for_groups = Array[String](["player"])
+parent_node = NodePath("..")
+parent_function_name = "press"
+metadata/_custom_type_script = "uid://drb50xyl4wx60"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EventTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2911377, 0)
+shape = SubResource("CylinderShape3D_w2bg7")
+debug_color = Color(0.7372549, 0.22745098, 1, 1)

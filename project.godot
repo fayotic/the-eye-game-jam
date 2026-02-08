@@ -21,6 +21,7 @@ AudioManager="*res://autoloads/audio_manager.gd"
 DataManager="*res://autoloads/data_manager.gd"
 EventBus="*res://autoloads/event_bus.gd"
 SettingsManager="*res://autoloads/settings_manager.gd"
+LevelManager="*res://autoloads/level_manager.gd"
 
 [dotnet]
 
@@ -88,3 +89,10 @@ sprint={
 
 3d/default_gravity=18.452
 common/physics_interpolation=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=3
+global_illumination/voxel_gi/quality=1
+anti_aliasing/quality/msaa_3d=2
+anti_aliasing/quality/use_taa=true

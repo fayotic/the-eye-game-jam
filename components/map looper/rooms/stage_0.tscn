@@ -9,7 +9,7 @@ colors = PackedColorArray(0.25565878, 0.25565878, 0.25565878, 1, 1, 1, 1, 1)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3mi0b"]
 frequency = 0.0064
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nmbdl"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3mi0b"]
 noise = SubResource("FastNoiseLite_3mi0b")
 color_ramp = SubResource("Gradient_x8ujj")
 seamless = true
@@ -18,10 +18,10 @@ seamless_blend_skirt = 0.424
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ib07"]
 albedo_color = Color(0.62152386, 0.62152386, 0.6215238, 1)
 metallic = 0.04
-roughness_texture = SubResource("NoiseTexture2D_nmbdl")
+roughness_texture = SubResource("NoiseTexture2D_3mi0b")
 normal_enabled = true
 normal_scale = 0.37
-normal_texture = SubResource("NoiseTexture2D_nmbdl")
+normal_texture = SubResource("NoiseTexture2D_3mi0b")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f37hs"]
@@ -39,13 +39,13 @@ roughness = 0.5
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_dqv27"]
+[sub_resource type="Sky" id="Sky_ta38h"]
 sky_material = SubResource("ProceduralSkyMaterial_nmbdl")
 
 [sub_resource type="Environment" id="Environment_x8ujj"]
 background_mode = 1
 background_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
-sky = SubResource("Sky_dqv27")
+sky = SubResource("Sky_ta38h")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -779,30 +779,6 @@ shadow_enabled = true
 omni_range = 18.118
 omni_attenuation = 0.483
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.634912, 2.5377154, 0)
-light_color = Color(0.69027984, 0.5522815, 0, 1)
-light_energy = 1.224
-shadow_enabled = true
-omni_range = 18.118
-omni_attenuation = 0.483
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.634912, 2.5377154, 0)
-light_color = Color(0.69027984, 0.5522815, 0, 1)
-light_energy = 1.224
-shadow_enabled = true
-omni_range = 18.118
-omni_attenuation = 0.483
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.63491, 2.5377154, 0)
-light_color = Color(0.69027984, 0.5522815, 0, 1)
-light_energy = 1.224
-shadow_enabled = true
-omni_range = 18.118
-omni_attenuation = 0.483
-
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6920133, -13)
 light_color = Color(0.69027984, 0.5522815, 0, 1)
@@ -818,3 +794,5 @@ light_energy = 1.224
 shadow_enabled = true
 omni_range = 18.118
 omni_attenuation = 0.483
+
+[node name="Triggers" type="Node3D" parent="."]
