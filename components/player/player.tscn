@@ -43,6 +43,34 @@ tracks/1/keys = {
 "values": [Vector3(0.40648878, 2.7259874, 0.4330085)]
 }
 
+[sub_resource type="Animation" id="Animation_wa6cj"]
+resource_name = "sword_equip"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.36666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.353096, -0.9576266, 0.62272125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.0104979, 0.15849486, -1.4041631), Vector3(0.40648878, 2.7259874, 0.4330085)]
+}
+
 [sub_resource type="Animation" id="Animation_mpawu"]
 resource_name = "sword_idle"
 length = 0.1
@@ -98,34 +126,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.12157496, -2.815119, 0.5711085), Vector3(0.424115, -2.8379054, 0.63006383), Vector3(0.40666172, -3.3405602, 0.43284166)]
-}
-
-[sub_resource type="Animation" id="Animation_wa6cj"]
-resource_name = "sword_equip"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.36666667),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.353096, -0.9576266, 0.62272125)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 0.36666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(1.0104979, 0.15849486, -1.4041631), Vector3(0.40648878, 2.7259874, 0.4330085)]
 }
 
 [sub_resource type="Animation" id="Animation_bv0o5"]

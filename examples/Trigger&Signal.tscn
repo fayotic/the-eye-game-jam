@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cywfow1cdeapc"]
+
+[ext_resource type="PackedScene" uid="uid://dbnno4mi4yrhc" path="res://examples/button.tscn" id="1_krsg1"]
+[ext_resource type="Script" uid="uid://c8uwg5ndptgbe" path="res://examples/ds.gd" id="2_vd82l"]
+
+[node name="Trigger&signal" type="Node3D"]
+
+[node name="Button" parent="." instance=ExtResource("1_krsg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6936703, 0.040497124, 7.109028)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5727177, 1.1531043, 1.1797203)
+size = Vector3(1, 2.2817383, 2.7519531)
+script = ExtResource("2_vd82l")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.521269, 2.2004414, 5.3528204)
+billboard = 1
+modulate = Color(0.7254902, 0, 0.6627451, 1)
+text = "Example setup for EventTrigger objects working with things in game."
+
+[editable path="Button"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm4xg3sg0ahnb"]
+
+[ext_resource type="Script" uid="uid://drb50xyl4wx60" path="res://components/trigger zones/trigger_base.gd" id="1_pqcvp"]
+
+[node name="TriggerArea" type="Area3D"]
+script = ExtResource("1_pqcvp")
+debug_prints = true

@@ -29,8 +29,7 @@ script = ExtResource("1_vq517")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0, 0, 0, 0)
 light_mask = 2
 visibility_layer = 2
 anchors_preset = 15
@@ -38,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]

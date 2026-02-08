@@ -1,0 +1,9 @@
+[gd_scene load_steps=0 format=3 uid="uid://bji3xy6wtgojc"]
+
+[node name="ObjectiveOverlay" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 36.0
+grow_vertical = 2
