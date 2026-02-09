@@ -1,9 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://rnp8a5irpmxw"]
+[gd_scene load_steps=33 format=3 uid="uid://rnp8a5irpmxw"]
 
 [ext_resource type="Script" uid="uid://183lnveq4dvl" path="res://scenes/title.gd" id="1_4ignj"]
 [ext_resource type="Texture2D" uid="uid://cqxtdfffnii4k" path="res://titleassets/sonred.png" id="2_4rr2b"]
 [ext_resource type="Shader" uid="uid://de566g4yravn8" path="res://scenes/blur_bg.gdshader" id="2_ia1n6"]
-[ext_resource type="PackedScene" uid="uid://ceq51lfn5telu" path="res://components/transitions/transition_animation.tscn" id="2_wosw1"]
 [ext_resource type="Texture2D" uid="uid://d17uxvei8ymbq" path="res://titleassets/playbutton.png" id="3_yql1r"]
 [ext_resource type="Texture2D" uid="uid://cb4j8wslg4x1v" path="res://titleassets/credits.png" id="4_ia1n6"]
 [ext_resource type="Texture2D" uid="uid://c7bu25kspfgwr" path="res://titleassets/quit.png" id="5_hiwto"]
@@ -11,7 +10,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hiwto"]
 shader = ExtResource("2_ia1n6")
-shader_parameter/blur_amount = 1.0910001468225001
+shader_parameter/blur_amount = 1.0910001468225
 shader_parameter/mix_amount = 0.0
 shader_parameter/color_over = Color(0, 0, 0, 1)
 
@@ -135,9 +134,9 @@ dof_blur_amount = 0.08
 
 [node name="Title" type="Node3D" node_paths=PackedStringArray("play_button", "settings_button", "quit_button")]
 script = ExtResource("1_4ignj")
-play_button = NodePath("CanvasLayer/VBoxContainer/PlayButton")
-settings_button = NodePath("CanvasLayer/VBoxContainer/Settings")
-quit_button = NodePath("CanvasLayer/VBoxContainer/Quit")
+play_button = NodePath("CanvasLayer/TextureRect/VBoxContainer/PlayButton")
+settings_button = NodePath("CanvasLayer/TextureRect/VBoxContainer/Settings")
+quit_button = NodePath("CanvasLayer/TextureRect/VBoxContainer/Quit")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -150,24 +149,39 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.5
+offset_top = 64.0
+offset_right = 175.5
+offset_bottom = 222.0
+grow_horizontal = 2
+texture = ExtResource("2_4rr2b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect"]
 unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -73.79993
-offset_top = -37.0
+offset_top = 144.0
 offset_right = 287.5332
-offset_bottom = 348.00024
+offset_bottom = 529.00024
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/TextureRect/VBoxContainer"]
 texture_filter = 2
 custom_minimum_size = Vector2(0, 131.935)
 layout_mode = 2
@@ -185,7 +199,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Settings" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Settings" type="Button" parent="CanvasLayer/TextureRect/VBoxContainer"]
 texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.74978, 0.74978, 0.74977994, 1)
@@ -201,7 +215,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_pvspv")
 icon = ExtResource("4_ia1n6")
 icon_alignment = 1
 
-[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="Quit" type="Button" parent="CanvasLayer/TextureRect/VBoxContainer"]
 texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.74978, 0.74978, 0.74977994, 1)
@@ -216,22 +230,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_pvspv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pvspv")
 icon = ExtResource("5_hiwto")
 icon_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-texture_filter = 2
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -175.5
-offset_top = 64.0
-offset_right = 175.5
-offset_bottom = 222.0
-grow_horizontal = 2
-texture = ExtResource("2_4rr2b")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="TransitionAnimation" parent="." instance=ExtResource("2_wosw1")]
 
 [node name="Build" type="Node3D" parent="."]
 transform = Transform3D(0.917, 0, 0, 0, 0.917, 0, 0, 0, 0.917, 0, 0, 0)
