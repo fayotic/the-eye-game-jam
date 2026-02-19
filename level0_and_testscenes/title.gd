@@ -38,7 +38,7 @@ func _on_button_pressed():
 	t.tween_property($CanvasLayer/TextureRect, "modulate:a", 0.0, 0.3)
 	t.play()
 	AudioManager.fade_out_group("Title", 3.0)
-	LevelManager.change_scene("res://scenes/world.tscn")
+	LevelManager.change_scene("res://level0_and_testscenes/world.tscn")
 
 func _call_settings() -> void:
 	SettingsManager.display_settings_overlay(self)
