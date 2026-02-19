@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cq1d1nkt6sdjr"
+path="res://.godot/imported/LowPoly_Cushion.obj-69b661c6295129db0fb864ffaf99029d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/LowPoly_Cushion.obj-69b661c6295129db0fb864ffaf99029d.mesh"]
+
+source_file="res://components/meshes_objects/PS1_ArabianStyle/Cushion/LowPoly_Cushion.obj"
+dest_files=["res://.godot/imported/LowPoly_Cushion.obj-69b661c6295129db0fb864ffaf99029d.mesh", "res://.godot/imported/LowPoly_Cushion.obj-69b661c6295129db0fb864ffaf99029d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

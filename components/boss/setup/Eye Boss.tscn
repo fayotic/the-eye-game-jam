@@ -1,7 +1,7 @@
-[gd_scene load_steps=38 format=4 uid="uid://dny3esp0jllqw"]
+[gd_scene format=4 uid="uid://dny3esp0jllqw"]
 
 [ext_resource type="Script" uid="uid://hedgrgps6cpr" path="res://components/boss/setup/animation_handler.gd" id="1_1nw7w"]
-[ext_resource type="Texture2D" uid="uid://b5uv7wsna6uvg" path="res://boss_model_tex_ani/Boss_Eye_v1_Tex_EyeBoss.png" id="2_dw162"]
+[ext_resource type="Texture2D" uid="uid://b5uv7wsna6uvg" path="res://boss_models/Boss_Eye_v1_Tex_EyeBoss.png" id="2_dw162"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0gfh"]
 resource_name = "Tex_EyeBoss"

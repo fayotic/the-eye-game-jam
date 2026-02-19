@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://c5h518qkgm3wu"]
+[gd_scene format=4 uid="uid://c5h518qkgm3wu"]
 
-[ext_resource type="Texture2D" uid="uid://iqsf8xoronve" path="res://boss_model_tex_ani/Boss_Mouth_v1_Mat_MouthBoss.png" id="1_rpxsc"]
+[ext_resource type="Texture2D" uid="uid://iqsf8xoronve" path="res://boss_models/Boss_Mouth_v1_Mat_MouthBoss.png" id="1_rpxsc"]
 [ext_resource type="Script" uid="uid://hedgrgps6cpr" path="res://components/boss/setup/animation_handler.gd" id="1_y3brl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vawkb"]

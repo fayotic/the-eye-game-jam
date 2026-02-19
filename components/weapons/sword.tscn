@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddnwt5o4uc0ok"]
+[gd_scene format=3 uid="uid://ddnwt5o4uc0ok"]
 
-[ext_resource type="ArrayMesh" uid="uid://b8216if8qg4gs" path="res://meshes/PS1_ArabianStyle/Sword/LowPoly_Sword.obj" id="1_a0blx"]
+[ext_resource type="ArrayMesh" uid="uid://b8216if8qg4gs" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/LowPoly_Sword.obj" id="1_a0blx"]
 [ext_resource type="Script" uid="uid://d0tu6w7rwsfsa" path="res://components/weapons/sword.gd" id="1_mfqva"]
-[ext_resource type="Texture2D" uid="uid://bot2sarnpisj4" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_BaseColor.png" id="2_mfqva"]
-[ext_resource type="Texture2D" uid="uid://d4jv4f48fbskv" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Emissive.png" id="3_8fr21"]
-[ext_resource type="Texture2D" uid="uid://bimpabwkdbcsh" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Metallic.png" id="4_qb5wg"]
-[ext_resource type="Texture2D" uid="uid://cresjnav50pe3" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Roughness.png" id="5_vr6uh"]
+[ext_resource type="Texture2D" uid="uid://bot2sarnpisj4" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_BaseColor.png" id="2_mfqva"]
+[ext_resource type="Texture2D" uid="uid://d4jv4f48fbskv" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Emissive.png" id="3_8fr21"]
+[ext_resource type="Texture2D" uid="uid://bimpabwkdbcsh" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Metallic.png" id="4_qb5wg"]
+[ext_resource type="Texture2D" uid="uid://cresjnav50pe3" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Roughness.png" id="5_vr6uh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c14hh"]
 albedo_texture = ExtResource("2_mfqva")

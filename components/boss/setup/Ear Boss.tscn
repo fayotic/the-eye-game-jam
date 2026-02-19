@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://cai38b4kx1iwf"]
+[gd_scene format=4 uid="uid://cai38b4kx1iwf"]
 
 [ext_resource type="Script" uid="uid://hedgrgps6cpr" path="res://components/boss/setup/animation_handler.gd" id="1_drfii"]
-[ext_resource type="Texture2D" uid="uid://byl2juq56mu82" path="res://boss_model_tex_ani/Boss_Ear_v1_Tex_EarBoss.png" id="1_m4txl"]
+[ext_resource type="Texture2D" uid="uid://byl2juq56mu82" path="res://boss_models/Boss_Ear_v1_Tex_EarBoss.png" id="1_m4txl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dhge"]
 resource_name = "Tex_EarBoss"

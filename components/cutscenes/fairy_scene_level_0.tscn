@@ -1,13 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://0jop8jxa6221"]
+[gd_scene format=3 uid="uid://0jop8jxa6221"]
 
 [ext_resource type="Script" uid="uid://6wmm2cyrag2d" path="res://components/cutscenes/fairy_scene_level_0.gd" id="1_pit28"]
 [ext_resource type="PackedScene" uid="uid://c2twa3fraraxo" path="res://components/npcs/npc_fairy.tscn" id="1_sk2k6"]
 [ext_resource type="PackedScene" uid="uid://dd6fdpja708v3" path="res://components/dialogue/dialogue_system.tscn" id="3_xpgmu"]
-[ext_resource type="ArrayMesh" uid="uid://b8216if8qg4gs" path="res://meshes/PS1_ArabianStyle/Sword/LowPoly_Sword.obj" id="4_5jpak"]
-[ext_resource type="Texture2D" uid="uid://bot2sarnpisj4" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_BaseColor.png" id="5_rvn8x"]
-[ext_resource type="Texture2D" uid="uid://d4jv4f48fbskv" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Emissive.png" id="6_c81xa"]
-[ext_resource type="Texture2D" uid="uid://bimpabwkdbcsh" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Metallic.png" id="7_8hnwt"]
-[ext_resource type="Texture2D" uid="uid://cresjnav50pe3" path="res://meshes/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Roughness.png" id="8_hiaak"]
+[ext_resource type="ArrayMesh" uid="uid://b8216if8qg4gs" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/LowPoly_Sword.obj" id="4_5jpak"]
+[ext_resource type="Texture2D" uid="uid://bot2sarnpisj4" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_BaseColor.png" id="5_rvn8x"]
+[ext_resource type="Texture2D" uid="uid://d4jv4f48fbskv" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Emissive.png" id="6_c81xa"]
+[ext_resource type="Texture2D" uid="uid://bimpabwkdbcsh" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Metallic.png" id="7_8hnwt"]
+[ext_resource type="Texture2D" uid="uid://cresjnav50pe3" path="res://components/meshes_objects/PS1_ArabianStyle/Sword/texture/LowPoly_Sword_Base_Roughness.png" id="8_hiaak"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pit28"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

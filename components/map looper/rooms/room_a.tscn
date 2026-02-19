@@ -1,9 +1,9 @@
-[gd_scene load_steps=31 format=4 uid="uid://br7c3g0bpoi28"]
+[gd_scene format=4 uid="uid://br7c3g0bpoi28"]
 
 [ext_resource type="Script" uid="uid://bpim71cucpw52" path="res://components/map looper/rooms/rooms.gd" id="1_xtofe"]
-[ext_resource type="PackedScene" uid="uid://ctha87kvx8f31" path="res://meshes/arc_single_reg.tscn" id="2_0rlro"]
+[ext_resource type="PackedScene" uid="uid://ctha87kvx8f31" path="res://components/meshes_objects/arc_single_reg.tscn" id="2_0rlro"]
 [ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="2_wcbn8"]
-[ext_resource type="PackedScene" uid="uid://bbipuwr57olrx" path="res://meshes/XMesh_mesh.tscn" id="3_njimg"]
+[ext_resource type="PackedScene" uid="uid://bbipuwr57olrx" path="res://components/meshes_objects/XMesh_mesh.tscn" id="3_njimg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_njimg"]
 size = Vector3(2.9780273, 2.0721436, 2.4248047)
