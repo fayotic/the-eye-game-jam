@@ -28,15 +28,27 @@ func _ready():
 	health.health_changed.connect(_on_health_changed)
 
 #Gets input from user to equip/unequip an item
-func _process(_delta: float) -> void:
-	if Input.is_action_pressed("equip") and is_equipped == false and fairy_scene.scene_done == true : #e
-		is_equipped = true
-		equipSword()
-	if Input.is_action_pressed("unequip") and fairy_scene.scene_done == true: #q
-		is_equipped = false
-		unequipSword()
-	if Input.is_action_pressed("attack"): #left mouse
-		animation.play("sword_swinging")
+func _process(delta: float) -> void:
+	$CanvasLayer/BoxContainer/InteractText.hide()
+	if %SeeCast.is_colliding():
+		var target = %SeeCast.get_collider()
+		if target.get_parent().has_method("interact"):
+			$CanvasLayer/BoxContainer/InteractText.show()
+			if Input.is_action_just_pressed("equip"): #TODO: Change action name to interact
+				target.get_parent().interact()
+				return 
+		else:
+			$CanvasLayer/BoxContainer/InteractText.hide()
+
+	if fairy_scene != null: #prevents crashes when fairy scene doesnt exist
+		if Input.is_action_pressed("equip") and is_equipped == false and fairy_scene.scene_done == true : #e
+			is_equipped = true
+			equipSword()
+		if Input.is_action_pressed("unequip") and fairy_scene.scene_done == true: #q
+			is_equipped = false
+			unequipSword()
+		if Input.is_action_pressed("attack"): #left mouse
+			animation.play("sword_swinging")
 		
 	
 		
