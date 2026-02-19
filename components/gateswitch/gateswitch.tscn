@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://r74nbuncys18"]
+
+[ext_resource type="Script" uid="uid://dm5gd3trhbukm" path="res://components/gateswitch/gateswitch.gd" id="1_oxike"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn568"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Gateswitch" type="Node3D" unique_id=461140964]
+script = ExtResource("1_oxike")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=642376482]
+transform = Transform3D(0.35367364, 0, 0, 0, 0.3161919, 0, 0, 0, 0.17040722, 0, 0, 0)
+use_collision = true
+collision_layer = 2
+material = SubResource("StandardMaterial3D_sn568")

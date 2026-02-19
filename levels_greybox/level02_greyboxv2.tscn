@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b52gqnt4jc7tw"]
+[gd_scene format=3 uid="uid://bc40feiysmtd7"]
+
+[ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="1_6bo23"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ekro"]
 albedo_color = Color(1, 0, 0, 1)
@@ -206,7 +208,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.001467, 1.25, -13)
 size = Vector3(4.23, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall42" unique_id=1427233458]
-transform = Transform3D(0.4, 8.351872e-23, -6.388758e-30, 0, -4.371139e-08, -1.75, -3.3407486e-23, 1, -7.649493e-08, -0.5100002, -1.25, 0)
+transform = Transform3D(1, 8.351872e-23, -3.650719e-30, 0, -4.371139e-08, -1, -8.351872e-23, 1, -4.371139e-08, -0.5100002, -1.25, 0)
 operation = 2
 radius = 1.0
 height = 0.75
@@ -217,7 +219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.485, 1.25, -12)
 size = Vector3(3.2, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall48" unique_id=1850843413]
-transform = Transform3D(0.4, 8.351872e-23, -6.388758e-30, 0, -4.371139e-08, -1.75, -3.3407486e-23, 1, -7.649493e-08, -0.97999954, -1.25, 0)
+transform = Transform3D(1, 8.351872e-23, -3.650719e-30, 0, -4.371139e-08, -1, -8.351872e-23, 1, -4.371139e-08, -0.97999954, -1.25, 0)
 operation = 2
 radius = 0.8
 height = 0.75
@@ -236,7 +238,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.980567, 1.25, -7)
 size = Vector3(8.205933, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall13" unique_id=1281408975]
-transform = Transform3D(0.4, 8.351872e-23, -6.388758e-30, 0, -4.371139e-08, -1.75, -3.3407486e-23, 1, -7.649493e-08, -0.53999996, -1.25, 0)
+transform = Transform3D(1, 8.351872e-23, -3.650719e-30, 0, -4.371139e-08, -1, -8.351872e-23, 1, -4.371139e-08, -0.53999996, -1.25, 0)
 operation = 2
 radius = 1.0
 height = 0.75
@@ -267,7 +269,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0089111, 1.25, -15)
 size = Vector3(6.2460938, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall7" unique_id=1702287896]
-transform = Transform3D(0.775, 8.351872e-23, -6.388758e-30, 0, -4.371139e-08, -1.75, -6.4727e-23, 1, -7.649493e-08, -0.99975157, -1.2492294, 0)
+transform = Transform3D(1, 8.351872e-23, -3.650719e-30, 0, -4.371139e-08, -1, -8.351872e-23, 1, -4.371139e-08, -0.99975157, -1.2492294, 0)
 operation = 2
 radius = 0.90000004
 height = 0.75
@@ -278,7 +280,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 1
 size = Vector3(10.02, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall3" unique_id=2126103821]
-transform = Transform3D(0.4, 0, 0, 0, -4.371139e-08, -1.75, 0, 1, -7.649493e-08, -2.1099997, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2.1099997, -1.25, 0)
 operation = 2
 radius = 1.0
 height = 0.75
@@ -301,7 +303,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 1
 size = Vector3(4.123047, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall14" unique_id=23496493]
-transform = Transform3D(0.4, 0, 0, 0, -4.371139e-08, -1.75, 0, 1, -7.649493e-08, 1.4500003, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.4500003, -1.25, 0)
 operation = 2
 radius = 1.0
 height = 0.75
@@ -312,7 +314,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11, 
 size = Vector3(3.084, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall16" unique_id=1469969639]
-transform = Transform3D(0.4, 8.351872e-23, -6.388758e-30, 0, -4.371139e-08, -1.75, -3.3407486e-23, 1, -7.649493e-08, -0.95, -1.25, 0)
+transform = Transform3D(1, 8.351872e-23, -3.650719e-30, 0, -4.371139e-08, -1, -8.351872e-23, 1, -4.371139e-08, -0.95, -1.25, 0)
 operation = 2
 radius = 1.0
 height = 0.75
@@ -323,7 +325,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13, 
 size = Vector3(2.147, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall18" unique_id=1421738700]
-transform = Transform3D(0.4, 0, 0, 0, -4.371139e-08, -1.75, 0, 1, -7.649493e-08, 0.46000051, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.46000051, -1.25, 0)
 operation = 2
 radius = 0.90000004
 height = 0.75
@@ -350,7 +352,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 
 size = Vector3(2.099266, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall27" unique_id=1130115998]
-transform = Transform3D(0.4, 0, 0, 0, -4.371139e-08, -1.75, 0, 1, -7.649493e-08, -0.030000687, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.030000687, -1.25, 0)
 operation = 2
 radius = 1.0
 height = 0.75
@@ -409,7 +411,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 
 size = Vector3(2.2, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall51" unique_id=2114898829]
-transform = Transform3D(0.4, 0, 0, 0, -4.371139e-08, -1.75, 0, 1, -7.649493e-08, 0.5100002, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.5100002, -1.25, 0)
 operation = 2
 radius = 0.8
 height = 0.75
@@ -420,7 +422,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10,
 size = Vector3(3.2, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall57" unique_id=742437839]
-transform = Transform3D(0.4, 0, 0, 0, -4.371139e-08, -1.75, 0, 1, -7.649493e-08, -0.5199995, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5199995, -1.25, 0)
 operation = 2
 radius = 0.8
 height = 0.75
@@ -455,7 +457,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 
 size = Vector3(2.2, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall76" unique_id=1619067932]
-transform = Transform3D(0.4, 0, 0, 0, -4.371139e-08, -1.75, 0, 1, -7.649493e-08, -0.5199995, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5199995, -1.25, 0)
 operation = 2
 radius = 0.8
 height = 0.75
@@ -474,7 +476,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 
 size = Vector3(1.2, 2.5, 0.2)
 
 [node name="Doorway" type="CSGCylinder3D" parent="Wall78" unique_id=1564880264]
-transform = Transform3D(0.4, 0, 0, 0, -4.371139e-08, -1.75, 0, 1, -7.649493e-08, -0.009999752, -1.25, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.009999752, -1.25, 0)
 operation = 2
 radius = 0.8
 height = 0.75
@@ -500,7 +502,7 @@ operation = 2
 size = Vector3(0.4, 2.5, 1)
 
 [node name="Gate2" type="CSGBox3D" parent="." unique_id=62011667]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4, 1.25, -0.012999058)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -4, 1.25, -0.012999058)
 size = Vector3(1.4, 2.5, 0.2)
 material = SubResource("StandardMaterial3D_bjw2r")
 
@@ -530,7 +532,7 @@ operation = 2
 size = Vector3(0.4, 2.5, 1)
 
 [node name="Gate4" type="CSGBox3D" parent="." unique_id=2025421820]
-transform = Transform3D(-1.45284185e-08, 0, 1, 0, 0.5860623, 0, -0.33237147, 0, -4.371139e-08, 2, 0.7296426, -5.982564)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, 0.7296426, -5.982564)
 size = Vector3(1.4, 2.5, 0.2)
 material = SubResource("StandardMaterial3D_ubft8")
 
@@ -545,7 +547,7 @@ operation = 2
 size = Vector3(0.4, 2.5, 1)
 
 [node name="Gate7" type="CSGBox3D" parent="." unique_id=854490277]
-transform = Transform3D(0.63161653, 0, 0.003589466, 0, 0.58606225, 0, -0.0022599003, 0, 1.003215, 0.027048528, 0.7296426, -15.001841)
+transform = Transform3D(0.9999936, 0, 0.0035779397, 0, 1, 0, -0.0035779397, 0, 0.9999936, 0.027048528, 0.7296426, -15.001841)
 size = Vector3(1.4, 2.5, 0.2)
 material = SubResource("StandardMaterial3D_plvw5")
 
@@ -560,7 +562,7 @@ operation = 2
 size = Vector3(0.4, 2.5, 1)
 
 [node name="Gate5" type="CSGBox3D" parent="." unique_id=1419537249]
-transform = Transform3D(-1.45284185e-08, 0, 1, 0, 0.5860623, 0, -0.33237147, 0, -4.371139e-08, 11.012196, 0.7296426, -4.544821)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.012196, 0.7296426, -4.544821)
 size = Vector3(1.4, 2.5, 0.2)
 material = SubResource("StandardMaterial3D_ebupn")
 
@@ -575,7 +577,7 @@ operation = 2
 size = Vector3(0.4, 2.5, 1)
 
 [node name="Gate6" type="CSGBox3D" parent="." unique_id=424498086]
-transform = Transform3D(-1.45284185e-08, 0, 1, 0, 0.5860623, 0, -0.33237147, 0, -4.371139e-08, 12.999321, 0.7296426, -5.5031705)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.999321, 0.7296426, -5.5031705)
 size = Vector3(1.4, 2.5, 0.2)
 material = SubResource("StandardMaterial3D_qkagk")
 
@@ -628,16 +630,24 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 
 size = Vector3(2.1, 2.5, 0.2)
 
 [node name="GateSwitch" type="CSGBox3D" parent="." unique_id=751090076]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 13.020443, 1.3161621, -14.376068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.020443, 1.3161621, -14.376068)
 size = Vector3(0.3, 0.5, 0.3)
 material = SubResource("StandardMaterial3D_ne8jy")
 
 [node name="GateSwitch2" type="CSGBox3D" parent="." unique_id=253669232]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -14.461231, 1.3161621, 1.3856056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.461231, 1.3161621, 1.3856056)
 size = Vector3(0.3, 0.5, 0.3)
 material = SubResource("StandardMaterial3D_73ggf")
 
 [node name="GateSwitch3" type="CSGBox3D" parent="." unique_id=1728037944]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -6.007271, 1.3161621, -0.5973778)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.007271, 1.3161621, -0.5973778)
 size = Vector3(0.3, 0.5, 0.3)
 material = SubResource("StandardMaterial3D_bffwt")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1976881682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6520152)
+use_collision = true
+size = Vector3(40, 1, 40)
+
+[node name="Player" parent="." unique_id=850099550 instance=ExtResource("1_6bo23")]
+transform = Transform3D(0.99911404, 0, -0.042084966, 0, 1, 0, 0.042084966, 0, 0.99911404, -0.32258797, 1, 3.0160508)
