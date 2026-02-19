@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=3 uid="uid://di0ipgwyigkok"]
+
+[ext_resource type="PackedScene" uid="uid://cstg4muhu16im" path="res://components/boss/boss.tscn" id="1_4xvq0"]
+[ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="2_u0kpc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u0kpc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5vdli"]
+sky_material = SubResource("ProceduralSkyMaterial_u0kpc")
+
+[sub_resource type="Environment" id="Environment_bjvy1"]
+background_mode = 2
+sky = SubResource("Sky_5vdli")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vdli"]
+size = Vector3(64, 1, 64)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_u0kpc"]
+vertices = PackedVector3Array(-31.5, -0.24222875, -31.5, -31.5, -0.24222875, 31.5, 31.5, -0.24222875, 31.5, 31.5, -0.24222875, -31.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="Gradient" id="Gradient_u0kpc"]
+colors = PackedColorArray(0, 0, 0, 1, 0.28235295, 0.3764706, 0.28235295, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5vdli"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bjvy1"]
+width = 1024
+height = 1024
+noise = SubResource("FastNoiseLite_5vdli")
+color_ramp = SubResource("Gradient_u0kpc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhjy3"]
+albedo_texture = SubResource("NoiseTexture2D_bjvy1")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hi2d4"]
+material = SubResource("StandardMaterial3D_xhjy3")
+size = Vector2(64, 64)
+
+[node name="BossTest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bjvy1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Boss" parent="." instance=ExtResource("1_4xvq0")]
+transform = Transform3D(0.99992496, 0.012251905, 0, -0.012251905, 0.99992496, 0, 0, 0, 1, 0, 0.53414035, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_u0kpc")]
+transform = Transform3D(0.031811956, 0, -0.9994939, 0, 1, 0, 0.9994939, 0, 0.031811956, 0, 1, 14.967169)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.53611445, 0)
+shape = SubResource("BoxShape3D_5vdli")
+debug_color = Color(0, 0, 2.751407, 0.7372549)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74222875, 0)
+navigation_mesh = SubResource("NavigationMesh_u0kpc")
+
+[node name="CSGBox3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74222875, 0)
+mesh = SubResource("PlaneMesh_hi2d4")
+skeleton = NodePath("../..")
