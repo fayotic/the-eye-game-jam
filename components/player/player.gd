@@ -90,17 +90,27 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_left", "move_right", "move_front", "move_back")
-	var direction = (head.transform * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		
-		if Input.is_action_pressed("sprint") && direction != Vector3.ZERO && is_on_floor():
-			current_speed *= SPEED_MULTIPLIER 
-			stamina -= stamina_drain * delta 
+	var input_dir := Input.get_vector("move_left", "move_right", "move_back", "move_front")
+
+	# Make movement relative to the head/camera orientation
+	var cam_basis = head.global_transform.basis
+	var forward = -cam_basis.z
+	forward.y = 0
+	forward = forward.normalized()
+	var right = cam_basis.x
+	right.y = 0
+	right = right.normalized()
+	
+	var direction = (forward * input_dir.y + right * input_dir.x).normalized()
+
+	if direction != Vector3.ZERO:
+		if Input.is_action_pressed("sprint") and is_on_floor():
+			current_speed *= SPEED_MULTIPLIER
+			stamina -= stamina_drain * delta
 		else:
-			stamina += stamina_regen * delta	
-			
-		stamina = clamp(stamina, 0.0, max_stamina)	
+			stamina += stamina_regen * delta
+
+		stamina = clamp(stamina, 0.0, max_stamina)
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 	else:
@@ -114,6 +124,6 @@ func _on_died():
 	player_died.emit()
 	
 	
-func _on_health_changed(current, max):
-	print("Player HP:", current, "/", max)
+func _on_health_changed(current, max_hp):
+	print("Player HP:", current, "/", max_hp)
 	
