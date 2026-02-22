@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 
 func open() -> void:
 	print ("open gate")
-	self.hide()
+	queue_free()
 	pass

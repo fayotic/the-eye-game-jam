@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	$CanvasLayer/BoxContainer/InteractText.hide()
 	if %SeeCast.is_colliding():
 		var target = %SeeCast.get_collider()
-		if target.get_parent().has_method("interact"):
+		if target.get_parent().has_method("interact") && !target.get_parent().isClicked:
 			$CanvasLayer/BoxContainer/InteractText.show()
 			if Input.is_action_just_pressed("equip"): #TODO: Change action name to interact
 				target.get_parent().interact()

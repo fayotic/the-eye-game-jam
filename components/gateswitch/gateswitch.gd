@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var gate: Gate
+var isClicked = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,4 +14,6 @@ func _process(delta: float) -> void:
 	
 	
 func interact() -> void:
-	gate.open()
+	if(!isClicked):
+		gate.open()
+		isClicked = true
