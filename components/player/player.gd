@@ -3,7 +3,7 @@ extends CharacterBody3D
 const SPEED = 7.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.001
-const SPEED_MULTIPLIER = 1.2
+const SPEED_MULTIPLIER = 3.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -18,6 +18,8 @@ var is_equipped = false
 @export var stamina := 100.0
 @export var stamina_drain := 20.0   
 @export var stamina_regen := 15.0
+@onready var staminaUi = $StaminaUi
+var exhausted: bool = false
 
 signal player_died
 
@@ -26,13 +28,13 @@ func _ready():
 	add_to_group("Player")
 	health.died.connect(_on_died)
 	health.health_changed.connect(_on_health_changed)
-
+	staminaUi.setProgressBarValue(max_stamina,true)
 #Gets input from user to equip/unequip an item
 func _process(delta: float) -> void:
 	$CanvasLayer/BoxContainer/InteractText.hide()
 	if %SeeCast.is_colliding():
 		var target = %SeeCast.get_collider()
-		if target.get_parent().has_method("interact"):
+		if target.get_parent().has_method("interact") && !target.get_parent().isClicked:
 			$CanvasLayer/BoxContainer/InteractText.show()
 			if Input.is_action_just_pressed("equip"): #TODO: Change action name to interact
 				target.get_parent().interact()
@@ -103,14 +105,27 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = (forward * input_dir.y + right * input_dir.x).normalized()
 
-	if direction != Vector3.ZERO:
-		if Input.is_action_pressed("sprint") and is_on_floor():
-			current_speed *= SPEED_MULTIPLIER
-			stamina -= stamina_drain * delta
-		else:
-			stamina += stamina_regen * delta
+	var is_sprinting = Input.is_action_pressed("sprint") and direction != Vector3.ZERO and is_on_floor()
 
-		stamina = clamp(stamina, 0.0, max_stamina)
+	if is_sprinting and not exhausted:
+		stamina -= stamina_drain * delta
+	else:
+		stamina += stamina_regen * delta
+
+	stamina = clamp(stamina, 0.0, max_stamina)
+
+	if stamina <= 0:
+		exhausted = true
+
+	if stamina >= max_stamina * 0.3:
+		exhausted = false
+
+	staminaUi.setProgressBarValue(stamina)
+	
+	if direction != Vector3.ZERO:
+		if is_sprinting and not exhausted:
+			current_speed *= SPEED_MULTIPLIER
+			
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 	else:

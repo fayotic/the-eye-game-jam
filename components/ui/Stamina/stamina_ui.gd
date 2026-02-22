@@ -1,7 +1,6 @@
-extends Node3D
+extends Control
 
-@export var gate: Gate
-var isClicked = false
+@onready var staminaProgressBar = $ProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,9 +10,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-	
-func interact() -> void:
-	if(!isClicked):
-		gate.open()
-		isClicked = true
+
+func setProgressBarValue(value: float, isInitial: bool = false) -> void:
+	if isInitial:
+		staminaProgressBar.max_value = value
+	else:	
+		staminaProgressBar.value = value
