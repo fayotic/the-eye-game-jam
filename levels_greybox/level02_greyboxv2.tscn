@@ -731,6 +731,7 @@ material = SubResource("StandardMaterial3D_bffwt")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level03Greybox"]
 transform = Transform3D(59.83875, 0, 0, 0, 1, 0, 0, 0, 50.623013, 0, 0, 0)
+visible = false
 use_collision = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level03Greybox"]

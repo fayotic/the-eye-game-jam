@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5rqbxtnr54xt"]
+[gd_scene load_steps=12 format=3 uid="uid://5rqbxtnr54xt"]
 
 [ext_resource type="Script" uid="uid://b54emypeedxhk" path="res://components/HealthComponent/HealthComponent.gd" id="1_kfe3d"]
 [ext_resource type="Script" uid="uid://noqrinxktevj" path="res://components/player/player.gd" id="1_t3162"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://80cjqhk868jo" path="res://components/inventory/inventory_resource.gd" id="2_mpawu"]
 [ext_resource type="Script" path="res://components/inventory/inventory.gd" id="3_pvtfm"]
 [ext_resource type="PackedScene" uid="uid://bo57517gwqipw" path="res://components/inventory/inventory_ui.tscn" id="4_wa6cj"]
+[ext_resource type="PackedScene" uid="uid://b7k03aokd4b5y" path="res://components/ui/Stamina/Stamina_UI.tscn" id="7_02tnr"]
 
 [sub_resource type="Resource" id="Resource_02tnr"]
 script = ExtResource("3_pvtfm")
@@ -78,5 +79,7 @@ size_flags_vertical = 4
 [node name="InteractText" type="Label" parent="CanvasLayer/BoxContainer"]
 layout_mode = 2
 text = "Press \"E\" to interact"
+
+[node name="StaminaUi" parent="." instance=ExtResource("7_02tnr")]
 
 [editable path="Head/Camera3D/ArmColl/Sword"]

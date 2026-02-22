@@ -18,6 +18,8 @@ var is_equipped = false
 @export var stamina := 100.0
 @export var stamina_drain := 20.0   
 @export var stamina_regen := 15.0
+@onready var staminaUi = $StaminaUi
+var exhausted: bool = false
 
 signal player_died
 
@@ -26,7 +28,7 @@ func _ready():
 	add_to_group("Player")
 	health.died.connect(_on_died)
 	health.health_changed.connect(_on_health_changed)
-
+	staminaUi.setProgressBarValue(max_stamina,true)
 #Gets input from user to equip/unequip an item
 func _process(delta: float) -> void:
 	$CanvasLayer/BoxContainer/InteractText.hide()
@@ -103,14 +105,27 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = (forward * input_dir.y + right * input_dir.x).normalized()
 
-	if direction != Vector3.ZERO:
-		if Input.is_action_pressed("sprint") and is_on_floor():
-			current_speed *= SPEED_MULTIPLIER
-			stamina -= stamina_drain * delta
-		else:
-			stamina += stamina_regen * delta
+	var is_sprinting = Input.is_action_pressed("sprint") and direction != Vector3.ZERO and is_on_floor()
 
-		stamina = clamp(stamina, 0.0, max_stamina)
+	if is_sprinting and not exhausted:
+		stamina -= stamina_drain * delta
+	else:
+		stamina += stamina_regen * delta
+
+	stamina = clamp(stamina, 0.0, max_stamina)
+
+	if stamina <= 0:
+		exhausted = true
+
+	if stamina >= max_stamina * 0.3:
+		exhausted = false
+
+	staminaUi.setProgressBarValue(stamina)
+	
+	if direction != Vector3.ZERO:
+		if is_sprinting and not exhausted:
+			current_speed *= SPEED_MULTIPLIER
+			
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 	else:
