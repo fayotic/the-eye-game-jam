@@ -2,8 +2,7 @@ extends Node3D
 
 @onready var player = $Player
 @onready var respawn_points = $RespawnPoints.get_children()
-var current_respawn_point: Node3D
-
+var current_respawn_point: Node3D 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_respawn_point = respawn_points[0]
@@ -21,3 +20,4 @@ func respawn_player():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	

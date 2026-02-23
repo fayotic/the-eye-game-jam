@@ -56,7 +56,8 @@ func _physics_process(delta: float) -> void:
 		var direction = global_position.direction_to(next_position)
 		var distance = (global_position - target.global_position).length()
 		print("Distance: ", distance)
-		velocity = velocity.lerp(direction * SPEED, ACCEL * delta)
+		#velocity = velocity.lerp(direction * SPEED, ACCEL * delta)
+		velocity = direction * SPEED
 		if body and distance > attack_distance:
 			body.play_anim("walk")
 		elif body and distance <= attack_distance:

@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://dny3esp0jllqw"]
+[gd_scene load_steps=38 format=4 uid="uid://dny3esp0jllqw"]
 
-[ext_resource type="Script" uid="uid://hedgrgps6cpr" path="res://components/boss/setup/animation_handler.gd" id="1_1nw7w"]
 [ext_resource type="Texture2D" uid="uid://b5uv7wsna6uvg" path="res://boss_models/Boss_Eye_v1_Tex_EyeBoss.png" id="2_dw162"]
+[ext_resource type="Script" uid="uid://hedgrgps6cpr" path="res://components/boss/setup/animation_handler.gd" id="3_dw162"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0gfh"]
 resource_name = "Tex_EyeBoss"
@@ -809,27 +809,10 @@ _data = {
 &"ArmatureAction": SubResource("Animation_5t5xj")
 }
 
-[node name="Eye" type="Node3D" node_paths=PackedStringArray("anim_player")]
+[node name="Eye" type="CharacterBody3D" node_paths=PackedStringArray("anim_player")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-script = ExtResource("1_1nw7w")
+script = ExtResource("3_dw162")
 anim_player = NodePath("AnimationPlayer")
-segments = {
-"attack": {
-"end": 7.0,
-"loop": false,
-"start": 4.9
-},
-"idle": {
-"end": 2.7,
-"loop": true,
-"start": 0.4
-},
-"walk": {
-"end": 4.6,
-"loop": true,
-"start": 2.9
-}
-}
 
 [node name="Armature" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6258187, 0)
@@ -847,21 +830,21 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 0, -8.742278e-08, 0, -1, 0, -8.742278e-08, 0, -1, 0, -0.042262793, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, -0.042262793, 0)
-bones/1/rotation = Quaternion(1, 5.421011e-20, 0, 1.3722854e-05)
+bones/1/rotation = Quaternion(0.999995, -0.00089887046, -2.1952243e-08, 0.003047475)
 bones/1/scale = Vector3(1, 0.9999896, 0.9999897)
 bones/2/name = "Sac.02"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 0, 3.2584137e-07, 0, 1, 0, -3.2584137e-07, 0, 1, 0, 0.16572309, 0)
 bones/2/enabled = true
 bones/2/position = Vector3(0, 0.16572309, 0)
-bones/2/rotation = Quaternion(-0.00014820136, 1.6292068e-07, -2.4146844e-11, 1)
+bones/2/rotation = Quaternion(-0.0021637562, 1.6401802e-07, 0.00052208453, 0.9999976)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Sac.03"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27373958, 0)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 0.27373958, 0)
-bones/3/rotation = Quaternion(-0.001023173, -7.81337e-14, -3.3347752e-10, 0.99999946)
+bones/3/rotation = Quaternion(0.0026673602, -8.11159e-10, -0.00096750533, 0.99999607)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Sac.04"
 bones/4/parent = 3
@@ -896,7 +879,7 @@ bones/8/parent = 0
 bones/8/rest = Transform3D(1, 2.9843254e-14, -3.2584126e-07, -3.2584128e-07, 1.7881393e-07, -0.99999994, 2.842171e-14, 0.99999994, 1.7881393e-07, 0, 0.5931089, 0)
 bones/8/enabled = true
 bones/8/position = Vector3(0, 0.5931089, 0)
-bones/8/rotation = Quaternion(0.70890707, -0.0009899974, 0.0009897667, 0.7053006)
+bones/8/rotation = Quaternion(0.7959856, -0.00075459783, 0.00075436936, 0.6053146)
 bones/8/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/9/name = "LegR_03.L"
 bones/9/parent = 0
@@ -993,12 +976,12 @@ bones/22/name = "Main_Eye.001"
 bones/22/parent = -1
 bones/22/rest = Transform3D(1, 0, -3.894144e-07, -3.894144e-07, 0, -1, 0, 1, 0, 0, 0.5048971, 0.8543182)
 bones/22/enabled = true
-bones/22/position = Vector3(0, 0.962554, 1.3391984)
+bones/22/position = Vector3(-4.9960036e-16, 0.50286543, 1.7023644)
 bones/22/rotation = Quaternion(0.70710677, -1.3767878e-07, -1.3767878e-07, 0.70710677)
 bones/22/scale = Vector3(1, 1, 1)
 
 [node name="Sac_04" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(1, 1.7463808e-13, 3.2584123e-07, 7.7247303e-10, -0.9999868, -0.0023701678, 3.2583694e-07, 0.002370168, -0.9999869, 0.0036912598, -0.379444, 0.022019597)
+transform = Transform3D(0.99999964, -0.0009068772, -5.235672e-06, -0.0009069202, -0.9999762, -0.0050876704, -6.2154004e-07, 0.005087672, -0.9999767, 0.0023670238, -0.3794217, 0.02653373)
 bone_name = "Sac.04"
 bone_idx = 4
 
@@ -1198,7 +1181,7 @@ mesh = SubResource("ArrayMesh_nonpd")
 skeleton = NodePath("")
 
 [node name="Main_Eye" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(0.99999607, -0.0027997978, 6.8135555e-06, -7.4661803e-06, -0.00510025, -0.999987, 0.0027997964, 0.9999831, -0.00510025, 0.0036912598, 0.9692783, 0.021277219)
+transform = Transform3D(0.99999774, -0.0021145593, 0.00028739605, -0.00028803636, -0.2671872, -0.9636445, 0.0021144724, 0.96364224, -0.2671872, 0.0036912598, 0.9692783, 0.021277219)
 bone_name = "Main_Eye"
 bone_idx = 8
 
