@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgqcdrwwf1op7"]
+[gd_scene load_steps=12 format=3 uid="uid://cgqcdrwwf1op7"]
 
 [ext_resource type="Script" uid="uid://d2npk5j42in44" path="res://level0_and_testscenes/Imad_Testscene/imad_feature_test.gd" id="1_goeld"]
 [ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="1_ycpnv"]
 [ext_resource type="Script" uid="uid://042okb7rv7tu" path="res://level0_and_testscenes/Imad_Testscene/damageArea.gd" id="2_fjowo"]
 [ext_resource type="PackedScene" uid="uid://r74nbuncys18" path="res://components/gateswitch/gateswitch.tscn" id="4_rpqvh"]
 [ext_resource type="PackedScene" uid="uid://c5uiwd2xjsobv" path="res://components/gateswitch/gate/gate.tscn" id="5_fnng0"]
-[ext_resource type="PackedScene" uid="uid://cstg4muhu16im" path="res://components/boss/boss.tscn" id="6_hvkc3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjowo"]
 
@@ -25,7 +24,7 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 script = ExtResource("1_goeld")
 
 [node name="Player" parent="." instance=ExtResource("1_ycpnv")]
-transform = Transform3D(0.9409635, 0, 0.33850813, 0, 1, 0, -0.33850813, 0, 0.9409635, 0, 1.2868922, -41.940086)
+transform = Transform3D(0.9409635, 0, 0.33850813, 0, 1, 0, -0.33850813, 0, 0.9409635, 0, 1.2868922, -11.623404)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.19952191, 0.9798934, 0, -0.9798934, 0.19952191, 0, 17.932764, 0)
@@ -46,12 +45,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6815405, 1.0436792, 9.86749
 [node name="RespawnPoint_2" type="Node3D" parent="RespawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.293137, 0, -7.629652)
 
-[node name="Gateswitch1" parent="." node_paths=PackedStringArray("gate") instance=ExtResource("4_rpqvh")]
+[node name="Gateswitch1" parent="." node_paths=PackedStringArray("gates") instance=ExtResource("4_rpqvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1754227, 9.664539)
-gate = NodePath("../Gate")
+gates = [NodePath("../Gate"), NodePath("../Gate2")]
 
 [node name="Gate" parent="." instance=ExtResource("5_fnng0")]
 transform = Transform3D(1, 0, 0, 0, 2.3000002, 0, 0, 0, 1, -3.2234263, 0, 9.897355)
+
+[node name="Gate2" parent="." instance=ExtResource("5_fnng0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 2.3000002, 0, 1, 0, -4.371139e-08, 3.8478122, 0, 3.72956)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(2.8381186, 0, 0, 0, 1.5048305, 0, 0, 0, 2.4363937, -0.12380695, -1.3532252, 0)
@@ -88,6 +90,18 @@ radius = 1.0
 height = 0.75
 sides = 12
 
+[node name="Wall4" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(-1.5728093e-08, 0, -0.93036574, 0, 1.2953539, 0, 0.35981682, 0, -4.0667583e-08, 1.4425818, 2.8721313, 2.2923515)
+use_collision = true
+size = Vector3(10.02, 5.0131836, 0.2)
+
+[node name="Doorway" type="CSGCylinder3D" parent="NavigationRegion3D/Wall4"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2.1099997, -1.25, 0)
+operation = 2
+radius = 1.0
+height = 0.75
+sides = 12
+
 [node name="Wall5" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(-3.4436546e-08, 0, 0.7878163, 0, 0.76556104, 0, -0.26246348, 0, -1.1472642e-08, 0.65438884, 1.8562056, -2.3877034)
 size = Vector3(12, 2.5, 0.2)
@@ -109,9 +123,5 @@ mesh = SubResource("CapsuleMesh_ycpnv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/MeshInstance3D/StaticBody3D"]
 shape = SubResource("CapsuleShape3D_ycpnv")
-
-[node name="Boss" parent="." instance=ExtResource("6_hvkc3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5434666, 0)
-boss_type = "Eye"
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

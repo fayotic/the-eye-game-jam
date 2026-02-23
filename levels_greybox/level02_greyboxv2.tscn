@@ -729,9 +729,8 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -6.007271, 1.3161621, -
 size = Vector3(0.3, 0.5, 0.3)
 material = SubResource("StandardMaterial3D_bffwt")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Level03Greybox"]
+[node name="Floor" type="CSGBox3D" parent="Level03Greybox"]
 transform = Transform3D(59.83875, 0, 0, 0, 1, 0, 0, 0, 50.623013, 0, 0, 0)
-visible = false
 use_collision = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level03Greybox"]
