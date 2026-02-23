@@ -15,6 +15,5 @@ boss_type = "Mouth"
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_m206j")
 
-[node name="AnimationHandler" type="Node3D" parent="." node_paths=PackedStringArray("anim_player")]
+[node name="AnimationHandler" type="Node3D" parent="."]
 script = ExtResource("2_0qc7v")
-anim_player = NodePath("")

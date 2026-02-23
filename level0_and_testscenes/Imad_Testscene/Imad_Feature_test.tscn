@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgqcdrwwf1op7"]
+[gd_scene load_steps=14 format=3 uid="uid://cgqcdrwwf1op7"]
 
 [ext_resource type="Script" uid="uid://d2npk5j42in44" path="res://level0_and_testscenes/Imad_Testscene/imad_feature_test.gd" id="1_goeld"]
 [ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="1_ycpnv"]
 [ext_resource type="Script" uid="uid://042okb7rv7tu" path="res://level0_and_testscenes/Imad_Testscene/damageArea.gd" id="2_fjowo"]
 [ext_resource type="PackedScene" uid="uid://r74nbuncys18" path="res://components/gateswitch/gateswitch.tscn" id="4_rpqvh"]
 [ext_resource type="PackedScene" uid="uid://c5uiwd2xjsobv" path="res://components/gateswitch/gate/gate.tscn" id="5_fnng0"]
+[ext_resource type="PackedScene" uid="uid://cstg4muhu16im" path="res://components/boss/boss.tscn" id="6_hvkc3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjowo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33jdq"]
+albedo_color = Color(0.9098891, 0, 0.017143788, 1)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_hvkc3"]
 vertices = PackedVector3Array(-2.581095, 1.3752079, -2.3373876, -0.08109498, 1.3752079, -2.3373876, -0.33109498, 1.3752079, -4.5873876, -2.581095, 1.3752079, -5.8373876, 2.668905, 1.3752079, -5.8373876, 0.668905, 1.3752079, -4.8373876, 1.418905, 1.3752079, -4.3373876, 1.168905, 1.3752079, -0.08738756, 2.668905, 1.3752079, -0.08738756, -0.08109498, 1.3752079, -0.33738756, -2.581095, 1.3752079, 3.4126124, 2.668905, 1.3752079, 5.9126124, 2.168905, 1.3752079, 3.6626124, 1.918905, 1.3752079, 4.9126124, -2.581095, 1.3752079, 4.9126124, -2.581095, 1.3752079, 5.9126124)
@@ -24,7 +28,7 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 script = ExtResource("1_goeld")
 
 [node name="Player" parent="." instance=ExtResource("1_ycpnv")]
-transform = Transform3D(0.9409635, 0, 0.33850813, 0, 1, 0, -0.33850813, 0, 0.9409635, 0, 1.2868922, -11.623404)
+transform = Transform3D(0.9409635, 0, 0.33850813, 0, 1, 0, -0.33850813, 0, 0.9409635, 0, 1.2868922, -39.437645)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.19952191, 0.9798934, 0, -0.9798934, 0.19952191, 0, 17.932764, 0)
@@ -45,14 +49,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6815405, 1.0436792, 9.86749
 [node name="RespawnPoint_2" type="Node3D" parent="RespawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.293137, 0, -7.629652)
 
-[node name="Gateswitch1" parent="." node_paths=PackedStringArray("gates") instance=ExtResource("4_rpqvh")]
+[node name="Gate_Red" type="Node3D" parent="."]
+
+[node name="Gateswitch1" parent="Gate_Red" node_paths=PackedStringArray("gates") instance=ExtResource("4_rpqvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1754227, 9.664539)
 gates = [NodePath("../Gate"), NodePath("../Gate2")]
+material = SubResource("StandardMaterial3D_33jdq")
 
-[node name="Gate" parent="." instance=ExtResource("5_fnng0")]
+[node name="Gate" parent="Gate_Red" instance=ExtResource("5_fnng0")]
 transform = Transform3D(1, 0, 0, 0, 2.3000002, 0, 0, 0, 1, -3.2234263, 0, 9.897355)
 
-[node name="Gate2" parent="." instance=ExtResource("5_fnng0")]
+[node name="Gate2" parent="Gate_Red" instance=ExtResource("5_fnng0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 2.3000002, 0, 1, 0, -4.371139e-08, 3.8478122, 0, 3.72956)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -79,7 +86,7 @@ mesh = SubResource("CapsuleMesh_ycpnv")
 shape = SubResource("CapsuleShape3D_ycpnv")
 
 [node name="Wall3" type="CSGBox3D" parent="NavigationRegion3D"]
-transform = Transform3D(0.35981682, 0, 0, 0, 1.2953539, 0, 0, 0, 0.9303658, -0.31833416, 2.8721313, 4.084611)
+transform = Transform3D(0.35981682, 0, 0, 0, 1.2953539, 0, 0, 0, 0.9303658, -0.32448417, 2.8721313, 4.0864167)
 use_collision = true
 size = Vector3(10.02, 5.0131836, 0.2)
 
@@ -123,5 +130,8 @@ mesh = SubResource("CapsuleMesh_ycpnv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/MeshInstance3D/StaticBody3D"]
 shape = SubResource("CapsuleShape3D_ycpnv")
+
+[node name="Boss" parent="." instance=ExtResource("6_hvkc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.790696, 2.0330806, 0)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
