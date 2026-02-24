@@ -581,6 +581,9 @@ environment = SubResource("Environment_6bo23")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level03Greybox/NavigationRegion3D/World"]
 transform = Transform3D(0.4, 0, 0, 0, 0.17003372, 0.3620615, 0, -0.3620615, 0.17003372, 0, 7.511998, -14.982741)
 
+[node name="Boss" parent="Level03Greybox/NavigationRegion3D" instance=ExtResource("3_3vbh8")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.22030126, 0.88067245, -9.631638)
+
 [node name="GateSwitch_Red" type="Node3D" parent="Level03Greybox"]
 
 [node name="Gateswitch" parent="Level03Greybox/GateSwitch_Red" node_paths=PackedStringArray("gates") instance=ExtResource("1_4rprc")]
@@ -618,9 +621,6 @@ material = SubResource("StandardMaterial3D_32c0o")
 [node name="Gate" parent="Level03Greybox/GateSwitch_Green" instance=ExtResource("2_32c0o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.030692, 1.3851941, 0)
 material = SubResource("StandardMaterial3D_32c0o")
-
-[node name="Boss" parent="Level03Greybox/GateSwitch_Green" instance=ExtResource("3_3vbh8")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.22030126, 0.88067245, -9.631638)
 
 [node name="GateSwitch_Blue" type="Node3D" parent="Level03Greybox"]
 
