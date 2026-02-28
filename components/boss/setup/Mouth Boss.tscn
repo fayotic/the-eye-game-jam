@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c5h518qkgm3wu"]
+[gd_scene load_steps=9 format=4 uid="uid://c5h518qkgm3wu"]
 
 [ext_resource type="Texture2D" uid="uid://iqsf8xoronve" path="res://boss_models/Boss_Mouth_v1_Mat_MouthBoss.png" id="1_rpxsc"]
 [ext_resource type="Script" uid="uid://hedgrgps6cpr" path="res://components/boss/setup/animation_handler.gd" id="1_y3brl"]
@@ -649,7 +649,7 @@ _data = {
 }
 
 [node name="Mouth" type="Node3D" node_paths=PackedStringArray("anim_player")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 0, 0)
 script = ExtResource("1_y3brl")
 anim_player = NodePath("AnimationPlayer")
 segments = {

@@ -51,7 +51,7 @@ transform = Transform3D(-0.004915848, 0.067631625, -0.07349693, -0.07390273, 0.0
 [node name="SeeCast" type="RayCast3D" parent="Head/Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(0.9989887, -0.05830344, 0.031795844, 0.031811956, -8.011212e-08, -0.9994937, 0.031795878, 1.8318247, 0.0010119579, 0, -0.18494248, 0)
-collision_mask = 2
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022995104, 0.7536957, 0.07224788)

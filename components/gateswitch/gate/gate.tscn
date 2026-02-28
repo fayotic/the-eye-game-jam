@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5uiwd2xjsobv"]
+[gd_scene load_steps=2 format=3 uid="uid://c5uiwd2xjsobv"]
 
 [ext_resource type="Script" uid="uid://doxcxumx8mrgu" path="res://components/gateswitch/gate/gate.gd" id="1_ftj5n"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1lb8"]
-albedo_color = Color(1, 0, 0, 1)
 
 [node name="Gate" type="Node3D"]
 script = ExtResource("1_ftj5n")
@@ -11,4 +8,3 @@ script = ExtResource("1_ftj5n")
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1.7970245, 0, 0, 0, 2.0009058, 0, 0, 0, 0.12774372, 0, 0, 0)
 use_collision = true
-material = SubResource("StandardMaterial3D_n1lb8")
