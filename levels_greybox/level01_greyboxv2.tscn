@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cww5wnjuw3ykn"]
 
+[ext_resource type="Script" uid="uid://dm5gd3trhbukm" path="res://components/gateswitch/gateswitch.gd" id="1_p433w"]
 [ext_resource type="PackedScene" uid="uid://cstg4muhu16im" path="res://components/boss/boss.tscn" id="1_twjwp"]
 [ext_resource type="PackedScene" uid="uid://5rqbxtnr54xt" path="res://components/player/player.tscn" id="2_psg7f"]
 [ext_resource type="Script" uid="uid://doxcxumx8mrgu" path="res://components/gateswitch/gate/gate.gd" id="3_cpkot"]
@@ -17,9 +18,6 @@ background_mode = 2
 sky = SubResource("Sky_cpkot")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpkot"]
-albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_psg7f"]
 vertices = PackedVector3Array(-15.935904, 0.51253945, -7.7030697, -15.935904, 0.51253945, 22.04693, 15.814096, 0.51253945, 22.04693, 15.814096, 0.51253945, -7.7030697)
@@ -53,20 +51,22 @@ visible = false
 use_collision = true
 size = Vector3(25.196716, 12.85426, 21.83648)
 
-[node name="GateSwitch3" type="CSGBox3D" parent="." unique_id=1332217652]
-transform = Transform3D(1.9357238, 0, 0, 0, 2.8887749, 0, 0, 0, 2.764321, 17.255527, 1.350701, 17.153522)
+[node name="GateSwitch3" type="CSGBox3D" parent="." unique_id=1332217652 node_paths=PackedStringArray("gates")]
+transform = Transform3D(2.4810066, 0, 0, 0, 3.172667, 0, 0, 0, 2.9558175, 22.860342, 1.2945296, 18.307209)
 size = Vector3(0.3, 0.5, 0.3)
-material = SubResource("StandardMaterial3D_cpkot")
+script = ExtResource("1_p433w")
+gates = [NodePath("../FirstGateSwitch/Gate3"), NodePath("../FirstGateSwitch/Gate"), NodePath("../FirstGateSwitch/Gate4")]
 
 [node name="Boss" parent="." unique_id=1940670711 instance=ExtResource("1_twjwp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1031141, 0.21082878, 4.9894247)
 boss_type = "Ear"
+attack_distance = 5.0
 
 [node name="Player" parent="." unique_id=1381451546 instance=ExtResource("2_psg7f")]
 transform = Transform3D(0.031811956, 0, -0.9994939, 0, 1, 0, 0.9994939, 0, 0.031811956, -9.801445, -0.09285498, 12.17827)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1756347971]
-transform = Transform3D(1.0754021, 0, 0, 0, 1.6048748, 0, 0, 0, 1.5357338, 0.16864596, -0.76157445, -0.9940095)
+transform = Transform3D(1.378337, 0, 0, 0, 1.7625926, 0, 0, 0, 1.6421205, 0.96017975, -0.85708714, -1.0974795)
 navigation_mesh = SubResource("NavigationMesh_psg7f")
 
 [node name="Floor" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1018039883]
@@ -75,7 +75,7 @@ use_collision = true
 size = Vector3(32.818604, 0.2, 30.679749)
 
 [node name="FirstGateSwitch" type="Node3D" parent="." unique_id=1600737175]
-transform = Transform3D(1.0754021, 0, 0, 0, 1.6048748, 0, 0, 0, 1.5357338, 0.16864596, -0.76157445, -0.9940095)
+transform = Transform3D(1.378337, 0, 0, 0, 1.7625926, 0, 0, 0, 1.6421205, 0.96017975, -0.85708714, -1.0974795)
 
 [node name="Gate3" type="Node3D" parent="FirstGateSwitch" unique_id=1827460689]
 transform = Transform3D(-0.9, 0, -2.2423937e-07, 0, 1, 0, 2.4915488e-07, 0, -0.9, -2.8983011, 1.3, 2.1470006)
@@ -84,19 +84,22 @@ material = SubResource("StandardMaterial3D_twjwp")
 metadata/_custom_type_script = "uid://doxcxumx8mrgu"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="FirstGateSwitch/Gate3" unique_id=1736311234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 0, 0)
+transform = Transform3D(1.0000002, 0, 8.526513e-14, 0, 1, 0, 0, 0, 1.0000001, 0.7862103, 0, 2.3841858e-07)
 operation = 2
+use_collision = true
 size = Vector3(0.4, 2.5, 1)
 material = SubResource("StandardMaterial3D_twjwp")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="FirstGateSwitch/Gate3" unique_id=1992436222]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3000002, 0, 0)
+transform = Transform3D(1.0000004, 0, 1.4210855e-13, 0, 1, 0, 0, 0, 1.0000001, -0.6836176, 0, -4.7683716e-07)
 operation = 2
+use_collision = true
 size = Vector3(0.4, 2.5, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="FirstGateSwitch/Gate3" unique_id=2128300211]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3000002, 0, 0)
+transform = Transform3D(1.0000004, 0, 1.4210855e-13, 0, 1, 0, 0, 0, 1.0000001, 0.052934885, 0, 0)
 operation = 2
+use_collision = true
 size = Vector3(0.4, 2.5, 1)
 
 [node name="Gate" type="Node3D" parent="FirstGateSwitch" unique_id=85892370]
@@ -192,7 +195,7 @@ operation = 2
 size = Vector3(0.4, 2.5, 1)
 
 [node name="Walls_Doorways" type="Node3D" parent="." unique_id=1397647317]
-transform = Transform3D(1.0754021, 0, 0, 0, 1.6048748, 0, 0, 0, 1.5357337, 0.16864596, -0.76157445, -0.9940095)
+transform = Transform3D(1.378337, 0, 0, 0, 1.7625926, 0, 0, 0, 1.6421205, 0.96017975, -0.85708714, -1.0974795)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Walls_Doorways" unique_id=710383523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.969385, 1.5419016, 12.338969)
@@ -226,13 +229,14 @@ use_collision = true
 size = Vector3(0.2, 3, 33)
 
 [node name="DoorFrame2" type="CSGCylinder3D" parent="Walls_Doorways/CSGBox3D6" unique_id=1512073490]
-transform = Transform3D(-1.540628e-07, -0.99999994, 7.1054274e-15, 3.5245461, -4.3711385e-08, 0, 0, 0, 2.001521, 7.1525574e-07, -1.1880124, 2.9331663)
+transform = Transform3D(-1.540628e-07, -1.0000001, 7.1054274e-15, 3.5245461, -4.3711385e-08, 0, 3.8116483e-21, 4.973799e-14, 2.001521, 7.1525574e-07, -1.1880124, 2.933166)
 operation = 2
+radius = 0.6176758
 height = 1.0
 sides = 11
 
 [node name="DoorFrame4" type="CSGCylinder3D" parent="Walls_Doorways/CSGBox3D6" unique_id=1404138363]
-transform = Transform3D(-1.540628e-07, -0.99999994, 7.1054274e-15, 3.5245461, -4.3711385e-08, 0, 0, 0, 2.001521, 7.1525574e-07, -1.1880124, 2.9331663)
+transform = Transform3D(-1.540628e-07, -0.9999999, 1.4210855e-14, 3.524546, -4.371138e-08, 0, -1.7787692e-20, 0, 2.001521, 7.1525574e-07, -1.1880124, 2.9331665)
 operation = 2
 height = 1.0
 sides = 11
@@ -299,7 +303,7 @@ operation = 2
 size = Vector3(1, 5.113, 2)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Walls_Doorways" unique_id=8701871]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 0.9999998, 0, 0.99999976, 0, -4.371138e-08, 8.219999, 1.5417488, 18.418074)
+transform = Transform3D(-4.371139e-08, 0, -0.99999994, 0, 0.99999976, 0, 0.9999997, 0, -4.371138e-08, 8.219998, 1.5417486, 19.379934)
 use_collision = true
 size = Vector3(0.2, 3, 16.5)
 
@@ -324,7 +328,7 @@ operation = 2
 size = Vector3(1, 5.113, 2)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Walls_Doorways" unique_id=1952209788]
-transform = Transform3D(1, 0, 0, 0, 0.9999996, 0, 0, 0, 0.9999937, 0.0007071941, 1.5417486, 7.1673307)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999995, 0, 0, 0, 0.9999936, 0.0007071942, 1.5417486, 6.85627)
 use_collision = true
 size = Vector3(0.2, 3, 30.615)
 
@@ -334,9 +338,9 @@ operation = 2
 size = Vector3(0.5505371, 0.61279297, 8.530457)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Walls_Doorways/CSGBox3D3" unique_id=713610479]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.691375)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999961, 0, 0, 0, 0.9999999, 0, 0, 6.407879)
 operation = 2
-size = Vector3(1, 5.113, 2)
+size = Vector3(1, 5.113, 3.6528015)
 
 [node name="DoorFrame2" type="CSGCylinder3D" parent="Walls_Doorways/CSGBox3D3" unique_id=282142854]
 transform = Transform3D(-1.540628e-07, -0.99999994, 7.1054274e-15, 3.5245461, -4.3711385e-08, 0, 0, 0, 2.001521, 7.1525574e-07, -1.2610136, -10.291803)
@@ -415,12 +419,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1999998, 1.5, -5.3)
 size = Vector3(1, 3, 1)
 
 [node name="GateSwitch2" type="CSGBox3D" parent="." unique_id=1258549269]
-transform = Transform3D(1.9357238, 0, 0, 0, 2.8887749, 0, 0, 0, 2.764321, -16.946352, 1.350701, -5.563775)
+transform = Transform3D(2.4810066, 0, 0, 0, 3.1726668, 0, 0, 0, 2.9558175, -20.976019, 1.4627705, -5.9838114)
 size = Vector3(0.3, 0.5, 0.3)
 material = SubResource("StandardMaterial3D_cr2k3")
 
 [node name="SecondGateSwitch" type="Node3D" parent="." unique_id=1155116510]
-transform = Transform3D(1.0754021, 0, 0, 0, 1.6048745, 0, 0, 0, 1.5357337, -16.662647, 0.84527725, -5.6100183)
+transform = Transform3D(1.378337, 0, 0, 0, 1.762592, 0, 0, 0, 1.6421205, -20.612396, 0.9076765, -6.0332584)
 
 [node name="Gateswitch" parent="SecondGateSwitch" unique_id=638087185 node_paths=PackedStringArray("gates") instance=ExtResource("4_p433w")]
 gates = [NodePath("../Gate2"), NodePath("../Gate5")]
@@ -432,13 +436,13 @@ material = SubResource("StandardMaterial3D_psg7f")
 metadata/_custom_type_script = "uid://doxcxumx8mrgu"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="SecondGateSwitch/Gate2" unique_id=1960163351]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999995, 0, 0)
+transform = Transform3D(0.99999994, 0, -1.4210855e-14, 0, 1, 0, -1.4210855e-14, 0, 1, 0.015289545, 0, -4.4703484e-08)
 operation = 2
 size = Vector3(0.4, 2.5, 1)
 material = SubResource("StandardMaterial3D_psg7f")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="SecondGateSwitch/Gate2" unique_id=930407971]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3000002, 0, 0)
+transform = Transform3D(0.99999994, 0, -1.4210855e-14, 0, 1, 0, -1.4210855e-14, 0, 1, -0.5843651, 0, -4.4703484e-08)
 operation = 2
 size = Vector3(0.4, 2.5, 1)
 

@@ -18,6 +18,7 @@ var body: Node3D
 
 func _ready():
 	initialize()
+	add_to_group("enemies")
 
 func initialize() -> void:
 	await get_tree().process_frame
